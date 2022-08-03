@@ -223,4 +223,3 @@ console.group("MyMessage2");
 console.groupEnd(); // 그룹으로 묶기 끝
 ```
 
-a
