@@ -35,12 +35,9 @@ Mac M1 버전의 경우 17.1 이상 버전 필요함.
 | 이름  | 설명 |
 | --- | --- |
 | Color Highlight | 색상 코드 값을 실제 그 색상으로 강조한다. |
-| Prettier - Code formatter | 코드의 줄바꿈, 들여쓰기등을 자동으로 정렬한다.
-사용방법: Ctrl+Shift+P > Format Document 명령 선택 |
-| ESLint | Javascript 구문 검사 기능
-터미널에서 npm install -g eslint 수행 필요. |
-| Code Runner | 설치후 Alt+Ctrl+N 단축키로 현재 소스코드 실행.
-환경설정에서 Code-runner: Clear Previous Output 항목 체크 |
+| Prettier - Code formatter | 코드의 줄바꿈, 들여쓰기등을 자동으로 정렬한다.<br>사용방법: Ctrl+Shift+P > Format Document 명령 선택 |
+| ESLint | Javascript 구문 검사 기능<br>터미널에서 npm install -g eslint 수행 필요. |
+| Code Runner | 설치후 Alt+Ctrl+N 단축키로 현재 소스코드 실행.<br>환경설정에서 Code-runner: Clear Previous Output 항목 체크 |
 | Tabnine | AI기반 소스코드 자동완성 도구 |
 
 # 03. Hello Javascript
