@@ -1,1 +1,1 @@
-[01-Hello-Javascript]()
+[01-Hello-Javascript](https://github.com/otw03/study/tree/main/javascript/01-Hello-Javascript)
