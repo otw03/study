@@ -1,7 +1,7 @@
 # [03_연산자](https://github.com/otw03/study/blob/main/javascript/03-%EC%97%B0%EC%82%B0%EC%9E%90/03_%EC%97%B0%EC%82%B0%EC%9E%90.md)  
+변수를 활용하여 각종 연산을 수행하는데 사용되는 특수 기호  
 # [연산자 연습문제](https://github.com/otw03/study/blob/main/javascript/03-%EC%97%B0%EC%82%B0%EC%9E%90/%EA%B3%BC%EC%A0%9C/%EC%98%A4%ED%83%9C%EC%9B%90%20%EC%97%B0%EC%82%B0%EC%9E%90%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)  
 
-변수를 활용하여 각종 연산을 수행하는데 사용되는 특수 기호
 
 # #01. 산술연산자(사칙연산자)
 
