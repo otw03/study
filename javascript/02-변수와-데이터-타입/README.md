@@ -73,8 +73,355 @@ HDD안에 저장되어 파일이 RAM에 복사된 후 읽혀진다.
 
 8칸 = 실수  
 
+[데이터 타입 링크](https://opentutorials.org/course/1223/5375) 생활코딩
+
 ---
 
 # 변수와 상수
 
 **데이터를 저장할 수 있는 메모리 상의 공간**
+
+# #01. 전역 변수
+
+프로그램의 어느 곳에서나 식별할 수 있는 변수를 의미
+
+## 1) 변수의 선언과 할당
+
+### 변수의 선언
+
+- 컴퓨터 메모리(RAM)상에 데이터를 기록하기 위해 공간을 예약하고 그 공간을 식별할 수 있는 이름을 지정하는 처리로 이해할 수 있다.
+- 변수 이름 앞에 `var` 키워드를 명시하고 변수 이름을 지정
+- 하나의 구문은 세미콜론으로 끝나야 함.
+
+```jsx
+var 변수 이름;
+```
+
+### 값의 할당
+
+- 선언된 변수에 대입연산자 `=` 를 사용하여 값을 대입하는 처리를 **할당**이라고 한다.
+- 항상 **오른쪽에서 왼쪽으로 대입**
+
+```jsx
+변수이름 = 값;
+```
+
+js는 처음 변수 할당없이 선언만 하면 1byte공간만 할당된다.  
+
+**js는 변수의 종류가 변수에 할당할 때 결정** 된다.  
+
+랜덤한 공간에 값이 할당된다.(Random Access Memory)  
+
+그렇기 때문에 **`js는 값을 참조`**(C언어의 포인터)한다.  
+
+## 2) 선언과 할당의 통합
+
+- 변수를 선언하면서 대입 연산자를 활용하여 값의 할당까지 한 라인에서 처리한다.
+
+```jsx
+var 변수 이름 = 값;
+```
+
+## 3) 변수값 변경하기
+
+- 한 번 값이 할당된 변수는 다른 값으로도 새롭게 할당 가능
+
+```jsx
+var num = 100;
+num = 200;
+```
+
+## 4) 변수이름 규칙
+
+1. 영어, 숫자, 언더바(_), $ 기호만 사용할 수 있다.  
+2. 첫 글자는 숫자로 시작할 수 없다.  
+    
+    > 일반적으로 영어 소문자로 시작한다.
+    > 
+3. 두 개 이상의 단어를 결합하여 이름을 지정하는 경우  
+    
+    1.  **스네이크 표기법**: 띄어쓰기가 필요한 위치에서 언더바(_)를 사용
+    
+    - 변수를 정의할 때는 잘 사용되지 않는다.
+        
+        > home + work ==> home_work
+        > 
+    
+    2.  카멜 표기법: 띄어쓰기가 필요한 위치의 첫 글자를 대문자로 변경.  
+    
+    - **변수** 정의할 때를 포함하여 거의 대부분의 경우 일반적으로 사용한다.
+        
+        > home + work ==> homeWork
+        > 
+
+## 5) 변수의 재선언
+
+- `var` 키워드를 사용하여 선언된 변수는 **중복 선언**이 가능
+- 이후 뒤에서 공부할 **변수의 스코프(유효성 범위)** 도 무시된다.
+- **이러한 특성은 JS를 제외한 모든 프로그래밍 언어들의 규칙에는 위배되는 사항이므로 가급적 사용하지 않는 것이 좋다.**
+
+> var 키워드를 사용을 자제하는 것이 좋다.
+> 
+- 01-전역변수.js 실습
+
+```javascript
+"use strict";
+
+/* 1) 변수의 선언과 할당 */
+// 변수 선언
+var myNumber1;
+// 할당
+myNumber1 = 100;
+console.log(myNumber1);
+
+/* 2) 변수의 선언과 할당 통합 */
+var myNumber2 = 123;
+console.log(myNumber2);
+
+/* 3) 변수값 변경하기 */
+// 한번 만들어진 변수는 다른 값으로 교체 가능
+myNumber2 = 456;
+console.log(myNumber2);
+
+/* 4) 변수의 재선언 */
+// 원칙적으로 한번 선언한 변수는 재선언이 불가능함
+// JS의 전역변수는 재선언이 가능.
+// 이는 일반적인 프로그래밍 언어의 규칙에 위배되므로 전역변수를 위한 'var' 키워드의 사용은 권장되지 않는다
+var myNumber3 = 300;
+console.log(myNumber3);
+
+// 동일한 변수 재선언
+var myNumber3 = 789;
+console.log(myNumber3);
+```
+
+---
+
+# #02. 지역변수
+
+- ES6 버전에서 새로 추가된 변수 생성 방법.
+- 대부분의 프로그래밍 언어에서 말하는 일반적인 변수의 생성 규칙을 따른다.
+
+> 적극 사용을 권장함.
+> 
+
+## 1) 변수 선언, 할당
+
+### 선언
+
+- `let` 키워드를 사용하여 선언한다.
+
+```javascript
+let 변수이름;
+```
+
+### 할당
+
+- `var` 키워드를 사용한 전역 변수의 경우와 동일하다.
+
+```javascript
+변수이름 = 값;
+```
+
+## 2) 선언과 할당의 통합
+
+- `var` 키워드의 경우와 동일한 규칙으로 선언과 할당을 한 행에 축약할 수 있다.
+
+```javascript
+let 변수이름 = 값;
+```
+
+## 3) 중복 선언 금지
+
+- `let` 키워드를 사용하여 선언된 변수는 중복 선언 불가능.
+- `let` 키워드를 통해 생성된 변수는 일반적인 프로그래밍 언어의 규칙을 모두 따른다.
+
+- 02-지역변수.js 실습
+
+```javascript
+"use strict";
+
+/* 1) 선언, 할당 */
+// 선언
+let myNumber1;
+// 할당
+myNumber1 = 100;
+console.log(myNumber1);
+
+/* 2) 선언, 할당 통합 */
+let myNumber2 = 200;
+console.log(myNumber2);
+
+/* 3) 중복 선언 금지 */
+let myNumber3 =1;
+console.log(myNumber3);
+
+// 앞에서 이미 선언된 변수이므로 에러 발생함.
+let myNumber3 = 2;
+console.log(myNumber3);
+```
+
+---
+
+# #03. 상수
+
+- 최초로 값을 할당한 이후 값을 변경할 수 없는 형태. (=읽기전용)
+- `const` 키워드를 사용
+- **선언과 동시에 값이 할당**되어야 함.
+- 상수의 이름은 대문자만으로 구성된 스네이크 표기법을 사용하여 생성하는 것이 일반적.
+
+- 03-상수.js 실습
+
+```javascript
+"use strict";
+
+/* 상수 */
+const MY_VALUE1 = 123;
+console.log(MY_VALUE1);
+
+MY_VALUE1 = 234; // const로 선언된 변수이므로 값을 변경할 수 없다.(에러)
+```
+
+---
+
+# #04. 변수의 자료형 (데이터 타입)
+
+## 1) 변수에 저장할 수 있는 값의 종류
+
+자바스크립트의 데이터 타입은 변수에 값을 할당(대입)할 때 결정된다.
+
+## 2) 변수의 자료형 확인하기
+
+- `typeof` 연산자는 피연산자의 평가 전 자료형을 나타내는 문자열을 반환한다.
+
+```javascript
+let a = 100;
+console.log(typeof a);
+```
+
+- 04-데이터타입.js 실습
+
+```javascript
+"use strict";
+
+/* 1) 지금 바로 익혀야 하는 데이터 타입 */
+// Number
+let sampleValue1 = 123;
+console.log(typeof sampleValue1);
+
+// Boolean, 논리값 (true(참), false((거짓)만 표현 가능)
+let sampleValue2 = true;
+console.log(typeof sampleValue2);
+
+// 쌍, 홑 따옴표로 감싼 경우 문자열(문장, 글자의 집합)로 인식
+let sampleValue3 = "hello world";
+console.log(typeof sampleValue3);
+
+/* 2) 시간을 두고 천천히 익혀야 하는 데이터 타입 */
+// 객체 (Object)
+let sampleValue4 = new Date();
+console.log(typeof sampleValue4);
+
+// null -> 비어있는 (=아무런 기능이 없는 상태) 객체 (Object)
+let sampleValue5 = null;
+console.log(typeof sampleValue5);
+
+// 선언만 하고 값이 정의되지 않은 상태 (undefined)
+let sampleValue6;
+console.log(typeof sampleValue6);
+```
+
+# #05. 형식문자(Format Character)
+
+**데이터를 입/출력 할 때, 컴퓨터가 그 Type을 인식할 수 있도록, 데이터의 해석을 지시해주는 문자**  
+
+형식 문자가 사용되는 이유는, 같은 데이터라도 해석하는 방향에 따라 다른 문자가 될 수 있기 때문이다. 예로, 'a'라는 알파벳 소문자 데이터는 글자로 인식하는 경우(%c) a를 출력하지만, 정수로 인식하는 경우(%d) 97을 출력할 수 있다.
+
+```javascript
+console.log("%s %d", "Hello", 123);
+```
+
+**%d 는 숫자가 아닌 값은 NaN으로 바꿔서 출력해줌 boolean 값은 0또는1**  
+
+- 05-형식문자.js 실습
+
+```javascript
+// 기본 데이터 타입
+const num = 123.45;
+const str = "hello";
+const bool = true;
+// 추후 살펴보게 될 데이터 타입
+const obj = new Date();                 // 객체
+const arr = [1, 2, 3];                  // 배열 (객체의 일종)
+const json = {"a" : 123, "b" : 234};    // JSON (객체의 일종)
+
+/* 1) (중요) 숫자 표현을 위한 문자 : %d */
+console.group("숫자값 출력하기")
+console.log("숫자값 출력하기=%d", num);     // 정상
+console.log("숫자값 출력하기=%d", str);     // 숫자가 아니므로 NaN
+console.log("숫자값 출력하기=%d", bool);    // 1 (0은 거짓, 0이외의 모든 수는 참. 일반적으로 1을 참으로 처리)
+console.log("숫자값 출력하기=%d", obj);     // 객체에 대한 Hash값 출력
+console.log("숫자값 출력하기=%d", arr);     // 숫자가 아니므로 NaN
+console.log("숫자값 출력하기=%d", json);    // 숫자가 아니므로 NaN
+console.groupEnd();
+
+/* 2) (중요) 문자열 표현을 위한 문자 : %s */
+console.group("문자열 출력하기")
+console.log("문자열 출력하기=%s", num);     // 정상
+console.log("문자열 출력하기=%s", str);     // 정상
+console.log("문자열 출력하기=%s", bool);    // 정상 
+console.log("문자열 출력하기=%s", obj);     // 정상
+console.log("문자열 출력하기=%s", arr);     // 정상
+console.log("문자열 출력하기=%s", json);    // 정상
+console.groupEnd();
+
+/* 3) (중요) 객체 표현을 위한 문자 : %o */
+console.group("객체 출력하기")
+console.log("객체 출력하기=%o", num);     // 정상
+console.log("객체 출력하기=%o", str);     // 정상 (따옴표가 적용됨)
+console.log("객체 출력하기=%o", bool);    // 정상 
+console.log("객체 출력하기=%o", obj);     // 정상
+console.log("객체 출력하기=%o", arr);     // 정상
+console.log("객체 출력하기=%o", json);    // 정상
+console.groupEnd();
+
+/* 4) (중요) JSON 표현을 위한 문자 : %j */
+console.group("JSON 출력하기")
+console.log("JSON 출력하기=%j", num);     // 정상
+console.log("JSON 출력하기=%j", str);     // 정상 (따옴표가 적용됨)
+console.log("JSON 출력하기=%j", bool);    // 정상 
+console.log("JSON 출력하기=%j", obj);     // 정상
+console.log("JSON 출력하기=%j", arr);     // 정상
+console.log("JSON 출력하기=%j", json);    // 정상
+console.groupEnd();
+
+const student = "자바스크립트학생";
+const age = 20;
+console.group("복합사용");
+console.log("%s님의 나이는 %d세 입니다.", student, age);
+console.groupEnd();
+```
+
+# #06. 변수 출력하기
+
+자바스크립트 문자열을 역따옴표로 감싸고 그 안에서 변수나 표현식을 ${}로 감싸서 표현한다.  
+
+아래의 코드는 `Hello Javascript`가 출력된다.
+
+```javascript
+const a = "Hello";
+console.log(`${a} Javascript`);
+```
+
+- 06-변수출력.js 실습
+
+```javascript
+const a = "Hello";
+console.log(`${a} Javascript`);
+
+const name = '민수';
+const age = 20;
+const message = `${name}는 ${age}세 입니다.`;
+console.log(message);
+```
+
