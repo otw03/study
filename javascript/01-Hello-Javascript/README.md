@@ -1,6 +1,4 @@
-[01_Hello_Javascript](https://github.com/otw03/study/blob/main/javascript/01-Hello-Javascript/01_Hello_Javascript.md)
-
-# 01-Hello-Javascript
+# [01_Hello_Javascript](https://github.com/otw03/study/blob/main/javascript/01-Hello-Javascript/01_Hello_Javascript.md)
 
 # 01. 웹 사이트 관련 직군 / 언어 분류
 
