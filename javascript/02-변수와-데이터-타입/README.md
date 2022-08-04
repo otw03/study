@@ -343,12 +343,6 @@ console.log(typeof sampleValue6);
 | %o  | 객체. Javascript의 모든 데이터는 객체로서 존재하기 때문에 사실상 모든 종류의 값에 적용 가능 |
 | %j  | JSON객체. JSON역시 객체의 한 종류이므로 사실상 모든 종류의 값에 적용 가능 |
 
-```jsx
-console.log("%s %d", "Hello", 123);
-```
-
-**%d 는 숫자가 아닌 값은 NaN으로 바꿔서 출력해줌 boolean 값은 0또는1**
-
 ```javascript
 console.log("%s %d", "Hello", 123);
 ```
