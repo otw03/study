@@ -37,7 +37,7 @@
 | 문자열 끼리의 덧셈 | 문자열을 하나로 병합하는 효과가 있다. |
 | 문자열과 다른 타입의 덧셈 | 문자열 이외의 값들을 모두 문자열로 취급하여 덧셈을 수행한다. 즉, 문자열끼리의 연결과 같은 결과를 갖는다. |
 
-- 01-산술연산자.js 실습
+- [01-산술연산자.js 실습](https://github.com/otw03/study/blob/main/javascript/03-%EC%97%B0%EC%82%B0%EC%9E%90/01-%EC%82%B0%EC%88%A0%EC%97%B0%EC%82%B0%EC%9E%90.js)
 
 ```jsx
 /* 1) 사칙 연산 출력하기 */
@@ -91,7 +91,7 @@ console.log("안녕하세요." + null);   // 안녕하세요.null
 3. 연산 결과를 변수 스스로에게 덮어 씌우기
 - 어떤 변수 x에 대한 연산 결과를 다시 x에 덮어 씌울 수 있다.
 
-- 02-대입연산자.js 실습
+- [02-대입연산자.js 실습](https://github.com/otw03/study/blob/main/javascript/03-%EC%97%B0%EC%82%B0%EC%9E%90/02-%EB%8C%80%EC%9E%85%EC%97%B0%EC%82%B0%EC%9E%90.js)
 
 ```jsx
 /* 1) 연산 결과를 새로운 변수에 대입 */
@@ -121,7 +121,7 @@ console.log(selfValue); // 400
 - 어떤 변수 x에 대한 연산 결과를 다시 x에 덮어 씌우는 연산을 축약한 표현
 - `+=`, `-=`, `*=`, `/=`, `%=`
 
-- 03-단항연산자.js 실습
+- [03-단항연산자.js 실습](https://github.com/otw03/study/blob/main/javascript/03-%EC%97%B0%EC%82%B0%EC%9E%90/03-%EB%8B%A8%ED%95%AD%EC%97%B0%EC%82%B0%EC%9E%90.js)
 
 ```jsx
 let x = 100;
@@ -163,7 +163,7 @@ console.log(x); // 2
 - 연산자가 뒤에 위치한 경우 (뒷북)
 - 변수에 대한 증감연산자가 작용하기 전에 전체 수식을 먼저 처리한 다음 나중에서야 증감 연산자가 수행된다.
 
-- 04-증감연산자.js 실습
+- [04-증감연산자.js 실습](https://github.com/otw03/study/blob/main/javascript/03-%EC%97%B0%EC%82%B0%EC%9E%90/04-%EC%A6%9D%EA%B0%90%EC%97%B0%EC%82%B0%EC%9E%90.js)
 
 ```jsx
 /* 1) 변수 스스로 1증가 */
@@ -222,7 +222,7 @@ console.log(nextValue);     // 2
 - `===`, `!==` : 값의 데이터 타입까지도 일치해야만 같다고 판단하기 때문에 문자열 1(`"1"`)과 숫자형 1(`1`)을 다르다고 판단한다.
 - **Javascript에서 `1 === 1.0` 은 정수와 실수를 구분하지 않고 모두 number 타입으로 처리하기 때문에 `true` 로 판단**한다.
 
-- 05-비교연산자.js 실습
+- [05-비교연산자.js 실습](https://github.com/otw03/study/blob/main/javascript/03-%EC%97%B0%EC%82%B0%EC%9E%90/05-%EB%B9%84%EA%B5%90%EC%97%B0%EC%82%B0%EC%9E%90.js)
 
 ```jsx
 /* 1) 이상, 이하, 미만, 초과 */
@@ -324,7 +324,7 @@ console.groupEnd();
 - 숫자 값에 적용할 경우 `**0`은 false으로 식별**되고 `**0`이 아닌 모든 수는 true로 식별**된다.
 - 문자열에 적용할 경우 **빈 문자열("")은 false로 식별**되고 **한 글자라도 포함된 문자열은 true로 식별**된다.
 
-- 06-논리연산자.js 실습
+- [06-논리연산자.js 실습](https://github.com/otw03/study/blob/main/javascript/03-%EC%97%B0%EC%82%B0%EC%9E%90/06-%EB%85%BC%EB%A6%AC%EC%97%B0%EC%82%B0%EC%9E%90.js)
 
 ```jsx
 /* 1) and */
@@ -410,7 +410,7 @@ let 변수 = 조건식 ? 값1 : 값2;
 
 `조건식`을 판별하여 식이 `참인 경우 값1`이 변수에 대입되고, 조건식이 `거짓인 경우 값2`가 변수에 대입되는 연산자.  
 
-- 07-삼항연산자.js 실습
+- [07-삼항연산자.js 실습](https://github.com/otw03/study/blob/main/javascript/03-%EC%97%B0%EC%82%B0%EC%9E%90/07-%EC%82%BC%ED%95%AD%EC%97%B0%EC%82%B0%EC%9E%90.js)
 
 ```jsx
 const age1 = 19;
