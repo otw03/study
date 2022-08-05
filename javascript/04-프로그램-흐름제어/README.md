@@ -327,7 +327,7 @@ while (조건식) {
 
 ![07-while-합계구하기.png](./%EC%98%88%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80/07-while-%ED%95%A9%EA%B3%84%EA%B5%AC%ED%95%98%EA%B8%B0.png)
 
-- 08-while-10증가.js 실습
+- [08-while-10증가.js 실습](https://github.com/otw03/study/blob/main/javascript/04-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%ED%9D%90%EB%A6%84%EC%A0%9C%EC%96%B4/08-while-10%EC%A6%9D%EA%B0%80.js)
 
 ```jsx
 /* 반복의 조건값이 10씩 증가하는 경우 */
@@ -338,7 +338,7 @@ while (a < 100) {   // 조건식 --> a의 범위 : 0~99
 }
 ```
 
-- 09-while-2감소.js 실습
+- [09-while-2감소.js 실습](https://github.com/otw03/study/blob/main/javascript/04-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%ED%9D%90%EB%A6%84%EC%A0%9C%EC%96%B4/09-while-2%EA%B0%90%EC%86%8C.js)
 
 ```jsx
 let b = 10;         // 초기식
@@ -384,7 +384,7 @@ for (초기식; 조건식; 증감식) {
 
 ![12-for-합계구하기.png](./%EC%98%88%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80/12-for-%ED%95%A9%EA%B3%84%EA%B5%AC%ED%95%98%EA%B8%B0.png)
 
-- 13-for-10증가.js 실습
+- [13-for-10증가.js 실습](https://github.com/otw03/study/blob/main/javascript/04-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%ED%9D%90%EB%A6%84%EC%A0%9C%EC%96%B4/13-for-10%EC%A6%9D%EA%B0%80.js)
 
 ```jsx
 // a가 0부터 100보다 작은 동안 10씩 증가
@@ -393,7 +393,7 @@ for(let a=0; a < 100; a+=10) {
 }
 ```
 
-- 14-for-2감소.js 실습
+- [14-for-2감소.js 실습](https://github.com/otw03/study/blob/main/javascript/04-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%ED%9D%90%EB%A6%84%EC%A0%9C%EC%96%B4/14-for-2%EA%B0%90%EC%86%8C.js)
 
 ```jsx
 // b가 10부터 0보다 큰 동안 2씩 감소.
