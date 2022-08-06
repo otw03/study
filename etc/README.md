@@ -1,1 +1,1 @@
-[GIT](documents\git.md)
+[GIT](documents/git.md)
