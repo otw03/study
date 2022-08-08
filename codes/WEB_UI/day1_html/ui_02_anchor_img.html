@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>앵커태그 및 이미지 태그</title>
+</head>
+<body>
+    <h1>앵커태그와 이미지태그</h1>
+
+    <h2>텍스트를 이용한 링크(앵커태그)</h2>
+    <a href="http://naver.com">네이버</a>
+    <a href="http://daum.net">다음</a>
+    <a href="http://google.com" target="_blank">구글</a>
+    <a href="http://nate.com">네이트</a>
+
+    <h2>이미지를 이용한 링크</h2>
+    <a href="http://naver.com">
+        <img src="../../../WEB_UI/images/day1_images/naver_logo.png" alt="네이버 로고 이미지" width="100">
+    </a>
+    <a href="http://daum.net">
+        <img src="../../../WEB_UI/images/day1_images/daum_logo.png" alt="다음 로고 이미지">
+    </a>
+    <a href="http://google.com" target="_blank">
+        <img src="../../../WEB_UI/images/day1_images/google_logo.png" alt="구글 로고 이미지">
+    </a>
+    <a href="http://nate.com">
+        <img src="../../../WEB_UI/images/day1_images/nate_logo.png" alt="네이트 로고 이미지">
+    </a>
+
+    <h2>이미지 태그</h2>
+    <img src="../../../WEB_UI/images/day1_images/penguin.jpg" alt="펭귄이 윙크하고 있는 사진">
+    <img src="펭귄.jpg" alt="이미지가 나타나지 않을 때 대체 텍스트">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsWQpLDHXZjnllah93fvYdNAt79WBlMxVrsLBOMRw7Yjm2O7nA0CkkicYrvS7lJ00NX04&usqp=CAU" alt="퍼온 이미지" title="이미지 제목">
+
+    <h2>앵커태그를 이용한 앱 바로 연결 (하이픈은 없어도 무방)</h2>
+    <a href="tel:010-1234-5678">전화걸기</a>
+    <a href="sms:010-1234-5678">메세지 보내기</a>
+    <a href="mailto:kme6918@gmail.com">이메일 보내기</a>
+    <!-- 
+    1. 이미지에 대체 텍스트 삽입(필수)  
+    alt(alternate=대체)속성 : 이미지가 나타나지 않을 경우 대신 그 설명해주는 문구.  
+    장식용 이미지에는 alt=”” 를 사용(속성 입력하되 값은 비워둠)  
+    W3C 웹표준 권고사항으로 모든 img 태그에 alt 속성은 필수로 입력하게끔 나와있습니다.(웹접근성)
+
+    2. width, height 속성 : 이미지의 너비, 높이 조절  
+    현재는 CSS로 조절하기 때문에 이미지 태그에 직접 입력하지 않습니다(지양)  
+    강제로 이미지의 사이즈를 늘리거나 줄일 수 있습니다.  
+    width, height 속성값에 px 외에 다른 단위 사용X
+
+    3.  title 속성 : 마우스를 이미지에 1~2초 정도 올리고 있으면 tooltip(풍선도움말)으로 나타납니다.(이미지의 제목 속성)
+
+    4. 링크 새창(새탭)에서 열기 : 앵커태그의 타겟 속성을 사용, 링크 클릭 시 새 탭(창)으로 열리게끔 설정  
+    ex) target="_blank"
+    
+    5. 앵커태그를 이용해 어플리케이션을 활용할 수도 있습니다.(반응형웹에 유용)  
+    ex) <a href="tel:010-1234-5678">전화걸기</a>    바로 전화 걸기  
+    ex) <a href="sms:010-1234-5678">메세지 보내기</a>   문자 보내기  
+    ex) <a href="mailto:hello@gamil.com">이메일 보내기</a>  이메일 보내기 
+    -->
+
+</body>
+</html>

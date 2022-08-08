@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조선택자</title>
+    <style>
+        /* 일반구조선택자 : 자식요소의 '순번' 위주.
+        선택하고자 하는 태그의 이름을 잘 보고 작성해야 함. */
+        ul>li:first-child {color: red;}
+        /* 첫번째 자식(짜장) */
+
+        ul>h2:last-child {color: green;}
+        /* 마지막번째 자식(홍콩반점) */
+
+        ul>li:nth-child(9) {color: hotpink;} /* ul안에서 순서대로 9번째 자식(쟁반짜장) */
+
+        ul>li:nth-last-child(2) {font-weight: bold;}
+        /* 뒤에서 2번째 자식(쟁반짜장) */
+
+        ul>li:nth-child(2n) {background-color: yellow;}
+        /* 짝수번째 자식들(형태가 다른 요소도 포함해서 숫자를 센다) */
+
+        ul>li:nth-child(2n+1) {background-color: pink;}
+        /* 홀수번째 자식들 */
+
+
+        /* 형태구조선택자 : 자식의 '형태' 위주(형태를 구분해서 그 안에서 순서를 센다.) */
+        ol>li:first-of-type {color: red;}
+        /* ol의 자식 중 li 중에 첫번째(짜장) */
+
+        ol>li:last-of-type {color: orange;}
+        /* ol의 자식 중 li 중에 마지막번째(깐풍기) */
+
+        ol>h2:last-of-type {font-size: 14px;} 
+        /* ol의 자식중 h2 중에 마지막번째(감사합니다.) */
+        /* ol>h2:first-of-type 와 같다. ol 중 유일한 h2라서 */
+
+        ol>li:nth-of-type(4) {color: blue;} 
+        /* ol의 자식 중 li 중에 4번째(마파밥) */
+        /* ol>li:nth-child(6) 와 같다. ol 중 6번째라서 */
+
+        ol>li:nth-last-of-type(2) {color: tomato;}
+        /* ol의 자식 중 li 중에 마지막 2번째(유산슬) */
+        /* ol>li:nth-last-child(3) 와 같다. ol 중 마지막 3번째라서 */
+
+        ol>li:nth-of-type(2n) {background-color: yellow;}
+        /* ol의 li(타입) 중 짝수번째 자식들 */
+    </style>
+</head>
+<body>
+    <!-- ul 또는 ol 태그 직하위에 li를 제외한 다른 태그가 들어오면 안됩니다.(웹표준에 어긋남) 예제를 위해 작성한 것이니 참고. -->
+    <ul>
+        <li>짜장</li>
+        <li>짬뽕</li>
+        <li>탕수육</li>
+        <li>마파밥</li>
+        <h2>북경반점</h2>
+        <li>삼선짬뽕</li>
+        <li>유산슬</li>
+        <li>깐풍기</li>
+        <li>쟁반짜장</li>
+        <h2>홍콩반점</h2>
+    </ul>
+    <hr>
+    <ol>
+        <h1>중식류</h1>
+        <li>짜장</li>
+        <li>짬뽕</li>
+        <li>탕수육</li>
+        <h1>식사류</h1>
+        <li>마파밥</li>
+        <li>삼선짬뽕</li>
+        <li>짬뽕밥</li>
+        <h1>요리류</h1>
+        <li>유산슬</li>
+        <li>깐풍기</li>
+        <h2>감사합니다.</h2>
+    </ol>
+</body>
+</html>

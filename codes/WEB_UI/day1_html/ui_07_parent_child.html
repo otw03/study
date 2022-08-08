@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>후손(하위)선택자와 자손(자식,직하위)선택자</title>
+    <style>
+        #header>h1 {color: red;}
+        /* #header라는 id를 가지고 있는 선택자의 '자식' 중 h1을 선택해서 글자색을 빨갛게 만들어라 */
+
+        #header>div>h1 {background-color: yellow;}
+        /* #header라는 id를 가지고 있는 선택자의 '자식' 중 div를 선택하고 
+        그 div의 자식인 h1을 선택해서 배경색을 노랗게 만들어라
+        자손선택자는 직하위에 있는 요소를 선택
+        */
+
+        #section h2 {background-color: skyblue;}
+        /* #section이라는 id를 가지고 있는 선택자의 '후손' 중 h2를 선택, 배경색을 하늘색으로
+        후손선택자는 하위요소를 모두 선택함.
+        띄어쓰기를 이용
+        */
+
+        #article>.text {font-size: 12px;}
+        /* .text를 '자식선택자'를 이용하여 글자 크기를 12px로 변경하기 */
+
+        p.text {color: orange;}
+        /* 태그선택자와 클래스선택자(or아이디) 붙여서 작성하면 더 정확히 선택 가능 */
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>웹퍼블리셔</h1>
+        <div>
+            <h1>6일차</h1>
+        </div>
+    </div>
+
+    <div id="section">
+        <h2>후손선택자와 자식선택자</h2>
+        <div id="article">
+            <h2 class="text">후손선택자와 자식선택자의 차이</h2>
+            <p class="text">얘는 위 12px의 속성이 적용 될까요?</p>
+        </div>
+    </div>
+</body>
+</html>
