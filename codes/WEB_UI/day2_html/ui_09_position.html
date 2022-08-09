@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position속성</title>
+    <style>
+        /* 
+        position: absolute; 
+        절대 위치 좌표를 사용해 요소를 배치. 
+        기준점(top, bottom, left, right)속성을 함께 사용해 위치를 지정해줄 수 있습니다. 요소를 스티커처럼 상위요소를 기준으로 원하는 곳에 붙입니다. 
+        
+        position: relative; 
+        상대 위치 좌표를 사용해 요소를 배치합니다. 원래 있던 위치(position: static; 상태로 기본 지정된 위치)에서 원하는 만큼 요소를 이동시킴.
+
+        z-index 속성 : 요소의 앞뒤 순서(깊이)를 결정(음수, 양수 사용 가능, 범위는 무한대). 
+        요소의 앞뒤 순서는 특별히 변경해주기 전까지는 요소를 입력한 순서대로 나중에 입력한 것이 위로 올라옵니다. 
+        범위는 무한대이며 그래서 가장 위에 항상 위치해야 하는 것들 (ex: 내비게이션에 마우스를 올렸을 때 서브메뉴가 나타나는 경우, 레이어 팝업을 띄워야 하는 경우 등등)에는 z-index 값을 999999 이런 식으로 입력하기도 합니다. 
+        한 페이지 내에 요소가 몇개가 들어갈 지 모르기 때문에 추후 수정이나 추가가 되더라도 항상 위에 있게 하기 위함.
+        ★z-index 속성은 position값이 지정되어야만 사용 가능(의미가 있다). static 제외.
+
+        position: absolute; 속성 : 상위요소(부모요소) 기준으로 위치 고정(현재는 부모요소가 body이기 때문에 웹페이지가 기준이다.) => 스크롤 내리면 밀려올라감
+        position: fixed; 속성 : 웹브라우저(창) 기준으로 위치 고정 => 스크롤 내려도 고정
+        */
+
+        .box {width: 100px; height: 100px; position: relative;}
+        .red {background-color: red; left: 0; top: 0; z-index: 3;}
+        .green {background-color: green; left: 50px; top: 50px; z-index: 2;}
+        .blue {background-color: blue; left: 100px; top: 100px; z-index: 1;}
+        .fixed {width: 100px; height: 100px; background-color: yellow; position: fixed; right: 50px; bottom: 50px;}
+    </style>
+</head>
+<body>
+    <div class="box red"></div>
+    <div class="box green"></div>
+    <div class="box blue"></div>
+    <div class="fixed"></div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

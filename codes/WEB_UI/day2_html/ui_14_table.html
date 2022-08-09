@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블태그(표만들기)</title>
+    <style>
+        table, tr, td, th {border: 1px solid red;}
+        table {width: 500px; border-collapse: collapse;}
+        /* border-collapse: collpase; 중복되는 표와 셀의 테두리를 합쳐 한 줄로 표시 */
+        th, td {padding: 10px;}
+        thead {background-color: aqua; border-top: 3px solid blue;}
+        tbody>tr:nth-child(2) {background-color: yellow;}
+        colgroup>col:nth-child(2) {background-color: pink;}
+        table>caption {font-size:30px; margin-bottom: 20px;}
+    </style>
+</head>
+<body>
+    <table> <!-- 표를 만들 때는 먼저 table 태그를 작성 -->
+        <caption>표의 제목입니다.</caption>
+        <colgroup><!-- column group : 여러 열(column)을 묶어 스타일 지정하는 태그. <col> 태그의 개수는 열의 개수와 동일해야 하며, 관련된 내용인 경우 묶어주는 게 접근성 측면에서도 좋다.   -->
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <thead> <!-- 표의 제목행을 묶어주는 태그 -->
+            <tr>
+                <th>제목1</th> <!-- table header : 형 내부의 제목 셀(제목 한 칸) 태그. 글자 두껍게 가운데 정렬 -->
+                <th>제목2</th>
+                <th>제목3</th>
+                <th>제목4</th>
+            </tr>
+        </thead>
+        <tbody> <!-- 표의 본문 행을 묶어주는 태그 -->
+            <tr> <!-- table row : 표 내부의 형(가로줄) 태그 -->
+                <td>내용1-1</td> <!-- table data : 행 내부의 내용 셀(내용 한 칸) 태그 -->
+                <td>내용1-2</td>
+                <td>내용1-3</td>
+                <td rowspan="4">내용1-4</td>
+                <!-- rowspan : 행을 합쳐주는 속성(1-4, 2-4, 3-3, 4-4병합) -->
+            </tr>
+            <tr>
+                <td>내용2-1</td>
+                <td>내용2-2</td>
+                <td>내용2-3</td>
+                <!-- <td>내용2-4</td> -->
+            </tr>
+            <tr>
+                <td>내용3-1</td>
+                <td colspan="2">내용3-2</td>
+                <!-- colspan : 행을 합쳐주는 속성(3-2, 3-3병합) -->
+                <!-- <td>내용3-3</td> -->
+                <!-- <td>내용3-4</td> -->
+            </tr>
+            <tr>
+                <td>내용4-1</td>
+                <td>내용4-2</td>
+                <td>내용4-3</td>
+                <!-- <td>내용4-4</td> -->
+            </tr>
+        </tbody>
+        <tfoot> <!-- 표의 요약 행을 묶어주는 태그 -->
+            <tr>
+                <td>내용5-1</td>
+                <td>내용5-2</td>
+                <td>내용5-3</td>
+                <td>내용5-4</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

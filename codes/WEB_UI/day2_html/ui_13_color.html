@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>색상단위</title>
+    <style>
+        div {width: 200px; height: 100px;}
+        #hex6 {background-color: #ff0000;}
+        /* 6자리의 0~9,A~F 숫자와 문자로 이루어짐(16진수로 컬러를 표현) */
+        #hex3 {background-color: #f00;}
+        /* 6자리의 헥사코드라 2개씩 쌍으로 같은글자인 경우 3자리로 축약해서 사용 가능 */
+        #rgb {background-color: rgb(255,0,0);}
+        /* 0~255까지의 숫자로 표현하는 방식 */
+        #rgba {background-color: rgba(255,0,0,1);}
+        /* rgb코드에 alpha값(투명도)추가 방식, 알파값은 (투명)0~1(불투명) 사이의 값으로 표현 */
+        #hsl {background-color: hsl(0,100%,50%);}
+        /* hue(색상)(0~360색상환의 각도숫자로 표현),
+        saturation(채도)(탁함0%~100%맑음)
+        채도가 0이면 무채색(흰색~회색~검정)
+        lightness(명도)(어두움0%~100%밝음)
+        명도가 0이면 무조건 검정색, 100%이면 무조건 흰색
+        값으로 표현 */
+        #hsla {background-color: hsla(0,100%,50%,1);}
+        #rgba_05 {background-color: rgba(255,0,0,.5);}
+        #opacity_05 {background-color: rgba(255,0,0,.5); opacity: 0.5;}
+        /* opacity 속성 : 요소 자체의 투명도를 조절 (투명)0~1(불투명) 사이의 값으로 표현 */
+    </style>
+</head>
+<body>
+    <div id="hex6">6자리 헥사코드</div>
+    <div id="hex3">3자리 헥사코드</div>
+    <div id="rgb">rgb 코드</div>
+    <div id="rgba">rgba 코드</div>
+    <div id="hsl">hsl 코드</div>
+    <div id="hsla">hsla 코드</div>
+    <hr>
+    <div id="rgba_05">rgba 투명도 50%</div>
+    <div id="opacity_05">opacity 투명도 50%</div>
+</body>
+</html>

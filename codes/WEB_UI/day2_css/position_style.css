@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/* CSS파일 내에서 한국어 사용시 CSS파일의 문자 인코딩(UTF-8:다국어)설정해주는 게 좋다. 파일의 첫번째 줄에 기입 */
+
+/* position: static을 제외한 다른 속성(relative/absolute/fixed)이 부모에게 지정이 되어있는 경우 자식요소가 부모를 기준으로 위치를 잡는다. */
+
+* {margin: 0; padding: 0;}
+
+#box {width: 500px; height: 500px; 
+    background-color: aquamarine; 
+    border-radius: 30px; 
+    position: relative; 
+    margin: auto;}
+#circle {width: 300px; height: 300px; 
+    background-color:bisque; border-radius: 50%; 
+    position: absolute; 
+    left: 50%; top: 50%; 
+    margin-left: -150px; margin-top: -150px;}
+#apeach {width: 200px; height: 200px; 
+    background-color: cornflowerblue; 
+    position: absolute; 
+    left: 50px; top: 50px;}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위 만들기</title>
+    <style>
+        /* 자식요소가 부모요소를 기준으로 위치를 잡을 수 있게끔 설정해주려면 부모요소에게 position: relative; 속성을 적용시켜야 한다.(만약 부모한테 relative가 없을 경우 더 상위의 relative가 적용된 부모요소를 기준으로 함.) */
+        * {margin: 0; padding: 0;}
+
+        .box {width: 300px; height: 300px; position: relative; border-radius: 30px;}
+        .dot {width: 80px; height: 80px; position: absolute; border-radius: 50%;}
+        .dot01_color {background-color: black;}
+        #box02>.dot {background-color: red;}
+        #box03>.dot {background-color: antiquewhite;}
+        #box04>.dot {background-color: yellow;}
+        #box05>.dot {background-color: brown;}
+        #box06>.dot {background-color: black;}
+
+        .left15 {left: 15px;}
+        .right15 {right: 15px;}
+        .top15 {top: 15px;}
+        .bottom15 {bottom: 15px;}
+        .left110 {left: 110px;}
+        .top110 {top: 110px;}
+ 
+        #box01 {background-color: aquamarine;}
+        #box02 {background-color: blueviolet;}
+        #box03 {background-color: darkblue;}
+        #box04 {background-color: black;}
+        #box05 {background-color: yellow;}
+        #box06 {background-color: red;}
+
+    </style>
+</head>
+<body>
+    <div id="box01" class="box">
+        <div class="dot dot01_color left110 top110"></div>
+    </div>
+
+    <div id="box02" class="box">
+        <div class="dot left15 top15"></div>
+        <div class="dot right15 bottom15"></div>
+    </div>
+
+    <div id="box03" class="box">
+        <div class="dot left15 top15"></div>
+        <div class="dot left110 top110"></div>
+        <div class="dot right15 bottom15"></div>
+    </div>
+
+    <div id="box04" class="box">
+        <div class="dot left15 top15"></div>
+        <div class="dot right15 top15"></div>
+        <div class="dot left15 bottom15"></div>
+        <div class="dot right15 bottom15"></div>
+    </div>
+
+    <div id="box05" class="box">
+        <div class="dot left15 top15"></div>
+        <div class="dot right15 top15"></div>
+        <div class="dot left110 top110"></div>
+        <div class="dot left15 bottom15"></div>
+        <div class="dot right15 bottom15"></div>
+    </div>
+
+    <div id="box06" class="box">
+        <div class="dot left15 top15"></div>
+        <div class="dot right15 top15"></div>
+        <div class="dot left15 top110"></div>
+        <div class="dot right15 top110"></div>
+        <div class="dot left15 bottom15"></div>
+        <div class="dot right15 bottom15"></div>
+    </div>
+</body>
+</html>

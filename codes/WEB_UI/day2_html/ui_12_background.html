@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background속성</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        div {width: 100%; height: 800px; text-align: center; font-size: 50px; font-weight: bold;}
+        #box01 {background-color: rgba(255, 0, 0, 0.3); background-image: url("../../../WEB_UI/images/day2_images/bg_01.jpg"); background-repeat: no-repeat; background-size: contain; background-attachment: fixed;}
+
+        #box02 {background-color: rgba(0, 255, 0, 0.3); background-image: url("../../../WEB_UI/images/day2_images/bg_02.jpg"); background-repeat: repeat-x; background-size: cover;}
+
+        #box03 {background-color: rgba(0, 0, 255, 0.3); background-image: url("../../../WEB_UI/images/day2_images/bg_03.jpg"); /* background-repeat: repeat-y; */ background-repeat: no-repeat; background-size: 300px;
+        /* background-position: right bottom; */
+        /* background-position: 50px 100px; */
+        /* background-position: center; */
+        background-position: right 50px bottom 100px;
+        } 
+
+        #box04 {background-color: rgba(255, 255, 0, 0.3); background-image: url("../../../WEB_UI/images/day2_images/bg_04.png"); background-size: 300px 100px;}
+
+        #box05 {background-color: rgba(255, 0, 255, 0.3); background-image: url("../../../WEB_UI/images/day2_images/bg_05.jpg"),url("../../../WEB_UI/images/day2_images/bg_01.jpg"); background-repeat: no-repeat; background-size: 300px 500px, 900px;}
+
+        #box06 {background-color: rgba(0, 255, 255, 0.3); background-image: url("../../../WEB_UI/images/day2_images/bg_06.jpg");}
+
+        #box07 {
+            /* background-color: rgba(0, 0, 255, 0.3); 
+            background-image: url("../../../WEB_UI/images/day2_images/bg_03.jpg");
+            background-repeat: no-repeat; 
+            background-size: 300px;
+            background-position: right 50px bottom 100px; */
+            background: rgba(0, 0, 255, 0.3) url("../../../WEB_UI/images/day2_images/bg_03.jpg") no-repeat right 50px bottom 100px/ 300px;
+        }
+
+        /* 
+        백그라운드 속성 합쳐서 쓰기(축약형)
+        backgroung: color image position / size repeat origin clip attachment;
+        실무에서 작성할 때는
+        bcakground: url('이미지 경로') no-repeat center;
+        */
+
+        /* backgroung-position: 가로축(X축)숫자또는위치 세로축(Y축)숫자또는위치;
+        한 개의 값만 넣으면 가로위치만 지정되고 세로는 center(생략),
+        ex: backgroung-position: left; -> left center(생략)
+        한 개의 값만 넣으면 세로위치만 지정되고 가로는 center(생략), 
+        ex: backgroung-position: top; -> center(생략) top
+        두개의 값을 넣으면 가로 세로 위치
+        크기값(px,%..)이 들어간 경우 left 기준이 되고 나머지 축은 center
+        위치키워드(right...)가 들어간 경우 나머지 축이 center
+
+        한 개의 값만 넣으면 가로위치만 지정되고 세로는 center(생략),  
+        ex: backgroung-position: left; -> left center(생략)
+        한 개의 값만 넣으면 세로위치만 지정 되고 가로는 center(생략),  
+        ex: backgroung-position: top; -> center(생략) top
+        두개의 값 을 넣으면 가로 세로 위치   
+        ex: backgroung-position: center center; -> backgroung-position: center;
+        가로위치값 숫자값 세로위치값 숫자값  하면  가로부터 숫자 세로부터 숫자만큼 이동  
+        ex: background-position: right 50px bottom 100px;
+
+        
+        */
+
+    </style>
+</head>
+<body>
+    <div id="box01">박스01</div>
+    <div id="box02">박스02</div>
+    <div id="box03">박스03</div>
+    <div id="box04">박스04</div>
+    <div id="box05">박스05</div>
+    <div id="box06">박스06</div>
+    <div id="box07">박스07</div>
+</body>
+</html>
