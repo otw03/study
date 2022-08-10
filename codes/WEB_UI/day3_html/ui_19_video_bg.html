@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지 영상 꽉 채우기</title>
+    <style>
+        * { margin: 0; padding: 0; border: 0;}
+        #bg_video {
+            position: fixed; left: 50%; top: 50%; /* 50%씩 */
+            transform: translate(-50%, -50%); /* left: 50%; top: 50%; 준 내용 수정하기 위함 */
+            width: auto; height: auto; 
+            min-width: 100%; min-height: 100%;
+        }
+        #container {
+            width: 450px; height: 300px;
+            background-color: rgba(255,255,255,.2); 
+            position: absolute;
+            left: 50%; top: 50%; /* 가운데 중앙으로 이동. 50%의 이유는 웹브라우저 크기가 변할 수 있기 때문에 */
+            margin: -150px 0 0 -225px; /* 창을 정가운데로 놓기 위해 너비(width)의 반, 높이(height)의 반 빼주기 */
+            box-sizing: border-box; /* 컨테이너 넓이, 높이값을 그대로 유지하고 싶을 때 */
+            text-align: center; 
+            color: white;
+        }
+        a {text-decoration: none; /* 밑줄 없애기 */}
+        #container h2 {
+            margin: 20px 0 40px
+        }
+        #container a {
+            color: red;
+            background-color: white; 
+            /* width: 100px; height: 100px;
+            display: block;
+            margin: auto; */
+            /* inline 속성을 가지고 있는 태그들은 width, height 속성이 적용 안 된다.  
+            사용하고 싶다면 display: block; 속성을 적용 시켜야 한다.  
+            block속성 적용시킨 것을 수정하기 위해서는 margin: auto; 로 정렬   */
+            padding: 20px 40px;
+        }
+    </style>
+</head>
+<body>
+    <video id="bg_video" src="http:/../../../WEB_UI/images/day3_images/video_sample.mp4" autoplay muted loop></video>
+    <div id="container">
+        <h1>hello</h1>
+        <h2>Welcome to my Website</h2>
+        <a href="#">click!</a>
+</body>
+</html>

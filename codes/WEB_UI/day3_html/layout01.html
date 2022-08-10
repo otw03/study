@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout01</title>
+    <style>
+        * {margin: 0; padding: 0; border: 0;}
+        #mom {width: 960px; height: 920px; background-color: rgba(0,0,0,.2); padding: 10px; /* box-sizing: border-box; */}
+        /* 기존 width height값 유지하려면 box-sizing: border-box;이용 */
+        #son01 {width: 960px; height: 100px; background-color: rgba(255,0,0,.2); margin-bottom: 10px;}
+        #son02 {width: 290px; height: 700px; background-color: rgba(0,255,0,.2); float: left; margin: 0 10px 10px 0;}
+        #son03 {width: 660px; height: 700px; background-color: rgba(0,0,255,.2); float: left;}
+        #son04 {width: 960px; height: 100px; background-color: rgba(255,255,0,.2); clear: both;}
+
+        /*
+        1. mom 안의 son01~04 생성
+        2. 기본 조건(w, h) 스타일 작성
+        3. 색 넣어주기
+        4. mom의 padding 넣어주고 빼기
+        5. float:left 사용
+        6. clear:both 사용
+        5. margin 넣기
+        */
+    </style>
+</head>
+<body>
+    <div id="mom">
+        <div id="son01"></div>
+        <div id="son02"></div>
+        <div id="son03"></div>
+        <div id="son04"></div>
+    </div>
+</body>
+</html>

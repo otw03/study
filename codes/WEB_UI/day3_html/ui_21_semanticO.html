@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시맨틱태그를 이용한 레이아웃</title>
+    <style>
+        /* 시맨틱태그란 semantic(의미가 있는)
+        '의미'가 있는 태그로, <header>, <nav>, <main>, <footer>, <figures>, <aside>등의 태그가 있으며 w3schools.com에서 semantic 검색
+        레이아웃을 짤 때 큼지막한 부분들을 화면낭독기나 검색엔진 등이 소스코드를 읽어낼 때 좀 더 문서의 의미를 인식하기 쉽게끔 만들어주는 역할을 함.
+        HTML5에서 새로 생긴 태그여서 IE8버전 이하는 적용X(다른 것들은 div로 대체, 특히 main태그는 IE적용X)
+        caniuse.com에서 브라우저별 지원 여부 확인 후 사용할 것!
+        */
+
+        ul {list-style: none;}
+        a {text-decoration: none;}
+        * {margin: 0; padding: 0; border: 0;}
+        #wrap {width: 960px; height: 1000px; background-color: rgba(0,0,0,.3); margin: auto;} /* margin: auto; 로 한번에 가운데 정렬 */
+        header {
+            width: 300px; height: 200px; 
+            background-color: rgba(255,0,0,.3);
+            margin: auto; /* 로고 박스 가운데 정렬 */
+            text-align: center; /* 로고 글씨 가운데 정렬 */
+        }
+
+        nav {
+            width: 960px; height: 50px; 
+            background-color: rgba(0,255,0,.3);
+        }
+        nav ul li {
+            width: 120px; height: 50px;
+            background-color: rgba(0,0,0,.3);
+            float: left; /* li을 한번에 가로로 정렬하기 위함 */
+        }
+
+        #main_visual {
+            width: 960px; height: 400px; 
+            background-color: rgba(0,0,255,.3);
+        }
+        
+        #main_banner {
+            width: 960px; height: 300px; 
+            background-color: rgba(255,0,255,.3);
+        }
+        .banner_cont { /* 배너 클래스 */
+            width: 480px; height: 300px;
+            background-color: rgba(0,255,255,.3);
+            float: left; /* 배너 정렬
+            main_banner 안에 있는 것만 float: left; 해주는 것이라서 footer 영향X*/
+        }
+
+        footer {
+            width: 960px; height: 50px; 
+            background-color: rgba(0,255,255,.3);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1>logo</h1>
+        </header>
+        <nav>
+            <ul>
+                <li>button</li>
+                <li>button</li>
+                <li>button</li>
+                <li>button</li>
+                <li>button</li>
+                <li>button</li>
+                <li>button</li>
+                <li>button</li>
+            </ul>
+        </nav>
+        <section id="main_visual"> <!-- 같은 section 태그를 쓰되, id를 이용해서 구분 -->
+            메인 비주얼 영역(프로모션 영역)
+        </section>
+        <section id="main_banner">
+            <div class="banner_cont">배너1</div>
+            <div class="banner_cont">배너2</div>
+        </section>
+        <footer>
+            푸터(하단 내용)
+        </footer>
+    </div>
+</body>
+</html>

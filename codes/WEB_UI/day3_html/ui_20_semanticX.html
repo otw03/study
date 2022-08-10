@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시맨틱태그를 이용하지 않은 레이아웃</title>
+    <style>
+    * {margin: 0; padding: 0; border: 0;}
+    ul {list-style: none;}
+    a {text-decoration: none;}
+    #wrap {width: 960px; height: 1000px; background-color: rgba(0,0,0,.3); margin: auto;} /* margin: auto; 로 한번에 가운데 정렬 */
+    #box01 {
+        width: 300px; height: 200px; 
+        background-color: rgba(255,0,0,.3);
+        margin: auto; /* 로고 박스 가운데 정렬 */
+        text-align: center; /* 로고 글씨 가운데 정렬 */
+    }
+
+    #box02 {
+        width: 960px; height: 50px; 
+        background-color: rgba(0,255,0,.3);
+    }
+    #box02 ul li {
+        width: 120px; height: 50px;
+        background-color: rgba(0,0,0,.3);
+        float: left; /* li을 한번에 가로로 정렬하기 위함 */
+    }
+
+    #box03 {
+        width: 960px; height: 400px; 
+        background-color: rgba(0,0,255,.3);
+    }
+    
+    #box04 {
+        width: 960px; height: 300px; 
+        background-color: rgba(255,0,255,.3);
+    }
+    .box04_01 { /* 배너 클래스 */
+        width: 480px; height: 300px;
+        background-color: rgba(0,255,255,.3);
+        float: left; /* 배너 정렬
+        box04 안에 있는 것만 float: left; 해주는 것이라서 box05 영향X*/
+    }
+
+    #box05 {
+        width: 960px; height: 50px; 
+        background-color: rgba(0,255,255,.3);
+    }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="box01">
+            <h1>logo</h1>
+        </div>
+        <div id="box02">
+            <ul>
+                <li>button</li>
+                <li>button</li>
+                <li>button</li>
+                <li>button</li>
+                <li>button</li>
+                <li>button</li>
+                <li>button</li>
+                <li>button</li>
+            </ul>
+        </div>
+        <div id="box03">
+            메인 비주얼 영역(프로모션 영역)
+        </div>
+        <div id="box04">
+            <div class="box04_01">배너1</div>
+            <div class="box04_01">배너2</div>
+        </div>
+        <div id="box05">
+            푸터(하단 내용)
+        </div>
+    </div>
+</body>
+</html>
