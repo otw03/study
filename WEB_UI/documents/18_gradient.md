@@ -53,16 +53,16 @@
 
 ```css
 #box04 {
-    width: 300px; height: 300px;
-    /* 지원되지 않는 구 브라우저에서 나타낼 색상(첫번째 작성) */
-    background-color: #0f0;
-    /* 웹브라우저 벤더 프리픽스(vendor prefix) : 지원이 안되는 속성을 브라우저에서 지원할 수 있게끔 지정
-    제일 아래부터 단계적으로 적용 */
-    background-image: -moz-linear-gradient(45deg, #0f0, #f00, #0ff);
-    background-image: -o-linear-gradient(45deg, #0f0, #f00, #0ff);
-    background-image: -webkit-linear-gradient(45deg, #0f0, #f00, #0ff);
-    /* 표준 속성은 항상 맨 마지막에 작성할 것 */
-    background-image: linear-gradient(45deg, #0f0, #f00, #0ff);
+  width: 300px; height: 300px;
+  /* 지원되지 않는 구 브라우저에서 나타낼 색상(첫번째 작성) */
+  background-color: #0f0;
+  /* 웹브라우저 벤더 프리픽스(vendor prefix) : 지원이 안되는 속성을 브라우저에서 지원할 수 있게끔 지정
+  제일 아래부터 단계적으로 적용 */
+  background-image: -moz-linear-gradient(45deg, #0f0, #f00, #0ff);
+  background-image: -o-linear-gradient(45deg, #0f0, #f00, #0ff);
+  background-image: -webkit-linear-gradient(45deg, #0f0, #f00, #0ff);
+  /* 표준 속성은 항상 맨 마지막에 작성할 것 */
+  background-image: linear-gradient(45deg, #0f0, #f00, #0ff);
 }
 ```
 

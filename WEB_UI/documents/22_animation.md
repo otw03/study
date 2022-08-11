@@ -29,9 +29,9 @@ to : 애니메이션이 끝날때의 모양을 설정
     animation-duration: 4s; 
 }
 @keyframes animation01 {
-		/* 처음, 끝만 있는 경우 */
-		from {background-color: yellow;}
-		to {background-color: green;}
+    /* 처음, 끝만 있는 경우 */
+    from {background-color: yellow;}
+    to {background-color: green;}
 }
 ```
 
@@ -49,11 +49,11 @@ to : 애니메이션이 끝날때의 모양을 설정
     animation-direction: alternate; /* alternate는 왔다갔다. reverse는 반대방향 */
 }
 @keyframes animation01 {
-		0% {background-color: red; left: 0; top: 0;}
-		25% {background-color: blue; left: 200px; top: 0;}
-		50% {background-color: yellow; left: 200px; top:200px; border-radius: 50%;} /* 중간에 동그라미로 변했다가 네모로 돌아가게 함 */
-		75% {background-color: green; left: 0; top:200px;}
-		100% {background-color: red; left: 0; top: 0;}
+    0% {background-color: red; left: 0; top: 0;}
+    25% {background-color: blue; left: 200px; top: 0;}
+    50% {background-color: yellow; left: 200px; top:200px; border-radius: 50%;} /* 중간에 동그라미로 변했다가 네모로 돌아가게 함 */
+    75% {background-color: green; left: 0; top:200px;}
+    100% {background-color: red; left: 0; top: 0;}
 }
 ```
 
