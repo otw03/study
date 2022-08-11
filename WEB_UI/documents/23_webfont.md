@@ -97,13 +97,13 @@ CSS rules to specify families 에 있는 내용 style 태그에 복사 붙여넣
 
 ```css
 <style>
-		@font-face {
-		    font-family: 'ghanachoco';
-		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
-		    font-weight: normal;
-		    font-style: normal;
-		}
-		p:nth-child(4) {font-family: 'ghanachoco';}
+	@font-face {
+		font-family: 'ghanachoco';
+		src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+	}
+	p:nth-child(4) {font-family: 'ghanachoco';}
 </style>
 ```
 
