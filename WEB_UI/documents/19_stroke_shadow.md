@@ -94,11 +94,11 @@ px로 넣었을 때랑 %로 넣었을 때 원형의 모양이 바뀐다.
 ```css
 /* 네모 */
 #box13 {
-	width: 0px; height: 0px;
-	border-top: 20px red solid;
-	border-bottom: 20px solid blue;
-	border-right: 20px solid green;
-	border-left: 20px solid yellow;
+  width: 0px; height: 0px;
+  border-top: 20px red solid;
+  border-bottom: 20px solid blue;
+  border-right: 20px solid green;
+  border-left: 20px solid yellow;
 }
 ```
 
@@ -107,11 +107,11 @@ px로 넣었을 때랑 %로 넣었을 때 원형의 모양이 바뀐다.
 ```css
 /* 반으로 잘림 */
 #box13 {
-	width: 0px; height: 0px;
-	/* border-top: 20px red solid; */
-	border-bottom: 20px solid blue;
-	border-right: 20px solid green;
-	border-left: 20px solid yellow;
+  width: 0px; height: 0px;
+  /* border-top: 20px red solid; */
+  border-bottom: 20px solid blue;
+  border-right: 20px solid green;
+  border-left: 20px solid yellow;
 }
 ```
 
@@ -120,7 +120,7 @@ px로 넣었을 때랑 %로 넣었을 때 원형의 모양이 바뀐다.
 ```css
 /* 세모 */
 #box13 {
-	width: 0px; height: 0px;
+  width: 0px; height: 0px;
   /* border-top: 20px solid red; */
   border-right: 20px solid transparent;
   border-bottom: 20px solid green;
