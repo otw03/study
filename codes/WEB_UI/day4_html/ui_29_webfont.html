@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹폰트</title>
+    <!-- 사용자(웹페이지를 보는 사람)의 컴퓨터에 깔려있지 않은 서체를 지정할 경우, 서체가 적용 안됨.
+    그래서 모든 사용자에게 동일 서체를 표현하기 위해서 웹에 폰트를 올리고, 그 폰트로 보여주는 게 '웹폰트'입니다.
+    영문서체 : 구글폰트
+    한글서체 : 눈누(상업적 무료 서체 모음)
+    
+    <link>태그로 가지고 오는 경우 <head> 안에 붙여넣기 후 fong-family로 지정
+    @import 또는 @font-face로 가지고 오는 경우 CSS에 붙여 넣는다.
+
+    font-weight : 100~900; 100단위로 지정 가능(서체에 따라 지원 여부가 모두 다르기 때문에 확인 후 사용 요망!) lighter(100), normal(400), bold(700), bolder 많이 사용
+
+    font-family : 서체1, 서체2, 서체3...;
+    서체1이 적용 안될 경우 서체2 적용...제일 마지막에는 가장 비슷한 기본 스타일 지정
+    ex : font-family : '나눔고딕', 돋움, 굴림, sans-serif;
+         font-family : '제주명조', 명조, serif;
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;300;400;500;700&family=Rubik+Distressed&display=swap" rel="stylesheet">
+    <!-- font-family: 'IBM Plex Sans KR', sans-serif; -->
+    <!-- font-family: 'Rubik Distressed', cursive; -->
+    <style>
+        p:first-of-type, h1 {font-family: 'IBM Plex Sans KR', sans-serif;}
+        h1 {font-weight: lighter;}
+        p:nth-child(3) {font-family: 'Rubik Distressed', cursive;}
+
+        @font-face {
+            font-family: 'ghanachoco';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        p:nth-child(4) {font-family: 'ghanachoco';}
+    </style>
+</head>
+<body>
+    
+<h1>산사태로 쑥대밭 된 광주 남한산성 마을… 주민들 “복구 막막”</h1>
+<p>중부지방을 강타한 집중호우 여파로 경기 광주시 남한산성 검복리 마을이 초토화됐다. 이 마을은 남한산성 관광지가 자리잡은 남한산 자락에서 3~4㎞ 아래 위치해 최근 퍼부은 비로 산사태 피해의 직격탄을 입었다.</p>
+<p>11일 마을 주민이 보내온 사진에는 8일과 9일 집중된 비로 아수라장으로 변한 마을 모습이 담겼다. 왕복 2차선 마을길 일부 구간은 산사태로 쏟아져 내린 토사물이 쌓여 막혀 있었다.</p>
+<p>이날까지도 마을에서 광주 시내로 이어지는 왕복 2차선 도로는 8일 산에서 쏟아져 내린 토사물이 쌓여 끊긴 뒤 20시간 여 만인 전날 오후 중장비들이 투입되면서 뚫렸다. 하지만, 성남 방향 도로는 어마어마하게 많은 양의 토사와 부러진 잡목들로 인해 이날까지도 복구가 진행 중이다.</p>
+<p>사진 속 주택가도 쑥대밭이나 다름 없었다. 산에서 밀려 내려온 흙더미와 거대한 잡목들이 빌라단지 등 주택가를 덮치는 아찔한 상황이 곳곳에서 일어났다. 한 주민은 집 안에서 자신의 주택을 뒤덮은 토사와 부러진 잡목을 절망적인 표정으로 바라보고 있었다.</p>
+
+
+</body>
+</html>
