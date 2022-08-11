@@ -14,7 +14,13 @@
 [14_video_bg](./documents/14_video_bg.md)  
 [15_semantic](./documents/15_semantic.md)  
 [16_form](./documents/16_form.md)  
-[]() 
-[]() 
+[17_display](./documents/17_display)  
+[18_gradient](./documents/18_gradient)  
+[19_stroke_shadow](./documents/19_stroke_shadow)  
+[20_transform](./documents/20_transform)  
+[21_transition](./documents/21_transition)  
+[22_animation](./documents/22_animation)  
+[23_webfont](./documents/23_webfont)  
+[]()  
 
 
