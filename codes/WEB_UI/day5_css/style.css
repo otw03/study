@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0; border: 0;}
+body {font-family: 'Nanum Gothic', sans-serif;}
+a {text-decoration: none;}
+ul {list-style: none}
+
+/* 헤더 영역 */
+#header {width: 100%; height: 30px; background: #554c4b;}
+#header_wrap {width: 1000px; height: 30px; margin: auto;}
+#gnb {width: 150px; height: 24px; float: right; font-size: 11px; padding-top: 6px; font-family: 'Noto Sans KR', sans-serif;}
+#gnb ul li {float: left;}
+#gnb ul li:first-child {border-right: 1px solid #494140; padding-right: 10px;  margin: 0 10px;}
+#gnb ul li a {color: #b3a8a6;}
+
+
+
+/* 내비게이션 영역 */
+#nav {width: 100%; height: 79px; border-bottom: 1px solid #d9d9d9;}
+#nav_wrap {width: 1000px; height: 80px; margin: auto;}
+#top_logo {width: 141px; height: 60px; float: left; padding-top: 20px;}
+#lnb {width: 750px; height: 80px; float: right; font-family: 'Noto Sans KR', sans-serif;}
+#lnb ul li {float: left; padding-top: 40px; font-size: 17px; margin-right: 50px; letter-spacing: -1px; font-weight: 500;}
+#lnb ul li a {color: #555;}
+#lnb ul li:last-child {margin-right: 0;}
+
+
+/* 메인 콘텐츠 영역 */
+#main_cont {width: 100%; height: 876px; background: url("../../../WEB_UI/images/day5_images/bgimg.png");}
+#main_cont_wrap {width: 1000px; height: 836px; margin: auto; padding-top: 40px; /* position: relative; */}
+#main_banner_01 {width: 594px; height: 594px; float: left; margin: 0px 15px 15px 0;}
+.main_banner_391_188 {width: 391px; height: 188px; float: left; }
+.main_banner_188_188 {width: 188px; height: 188px; float: left; }
+.margin_b_15 {margin-bottom: 15px;}
+.margin_r_15 {margin-right: 15px;}
+.banner_shadow {box-shadow: 7px 7px 7px rgba(0,0,0,.15);}
+
+
+/* 퀵메뉴 */
+#quick {width: 116px; height: 584px; 
+    /* position: absolute; left: 1015px; 부모박스인 #main_cont_wrap 안에 자식으로 넣었을 때 부모를 기준으로 자리를 지정하는 방법 */ position: absolute; left: 50%; top: 150px; margin-left: 523px;}
+
+
+/* 하단 영역 */
+#footer {width: 100%; height: 147px; border-top: 1px solid #ccc;}
+#footer_wrap {width: 1000px; height: 117px; margin: auto; padding-top: 30px;}
+#footer_logo {width: 200px; height: 117px; float: left; text-align: right;}
+#copyright {width: 750px; height: 117px; float: right; font-size: 12px;}
+#fnb ul li {float: left; padding-right: 10px; border-right: 1px solid #ccc; margin-right: 10px;}
+#fnb ul li:last-child {border: 0;}
+#fnb ul li:nth-child(3), 
+#fnb ul li:nth-child(4) {font-weight: bold;}
+#fnb ul li a {color: #555;}
+#fnb::after {content: ""; display: block; clear: both;} /* fnb뒤에 가상의 클리어 박스를 만들어서 자식요소로 끼워넣어줌. 눈에 보이게 표시는 하지 않을거기 때문에 content 속성에 빈 문자열("")을 넣음. */
+
+/* 
+::after / ::before 가상선택자(전후문자선택자)
+선택자의 앞이나 뒤에 가상의 요소를 만들어서 끼워 넣어 줍니다.
+content 속성을 사용할 수 있습니다.(다른 선택자에서는 content 속성 사용 불가)
+*/
+
+#company_info {margin: 10px 0 15px; line-height: 1.5; font-size: 11px; color: #555;}
+#company_info span {margin-right: 30px;}
+#copy {font-size: 10px; color: #888;}
