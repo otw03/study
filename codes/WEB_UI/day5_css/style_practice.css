@@ -1,0 +1,133 @@
+/* 메인콘텐츠부터 하면됨 html main_banner 클래스 추가 검색 */
+
+@charset "UTF-8";
+body {font-family: 'Nanum Gothic', sans-serif;}
+a {text-decoration: none;}
+ul {list-style: none;}
+
+* {margin: 0; padding: 0; border: 0;}
+
+/* 헤더 영역 */
+#header {
+    width: 100%; height: 30px; 
+    background-color: rgba(255,0,0,.3);
+}
+#header_wrap {
+    width: 1000px; height: 30px;
+    background-color: rgba(255,0,0,.2);
+    margin: auto;
+}
+#gnb {
+    width: 150px; height: 24px;
+    background-color: rgba(0,0,0,.2);
+    float: right;
+    font-size: 11px; 
+    padding-top: 6px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#gnb ul li {float: left;}
+#gnb ul li:first-child {border-right: 1px solid #494140; padding-right: 10px; margin: 0 10px;}
+#gnb ul li a {color: #b3a8a6;}
+
+
+
+/* 내비게이션 영역 */
+#nav {
+    width: 100%; height: 79px; 
+    background-color: rgba(0,255,0,.3);
+    border-bottom: 1px solid #d9d9d9;
+}
+#nav_wrap {
+    width: 1000px; height: 80px;
+    background-color: rgba(0,255,0,.2);
+    margin: auto;
+}
+#top_logo {
+    width: 141px; height: 80px;
+    background-color: rgba(0,0,0,.2);
+    float: left;
+    padding-top: 20px; box-sizing: border-box;
+}
+#lnb {
+    width: 750px; height: 80px;
+    background-color: rgba(0,0,0,.2);
+    float: right;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#lnb ul li {
+    float: left;
+    padding-top: 40px;
+    font-size: 17px;
+    margin-right: 50px;
+    letter-spacing: -1px; 
+    font-weight: 500;
+}
+#lnb ul li:last-child {margin-right: 0;}
+
+
+/* 메인 콘텐츠 영역 */
+#main_cont {
+    width: 100%; height: 876px; 
+    background-color: rgba(0,0,255,.3);
+}
+#main_cont_wrap {
+    width: 1000px; height: 836px;
+    background-color: rgba(0,0,255,.2);
+    margin: auto;
+    padding-top: 40px;
+}
+#main_banner_01 {
+    width: 594px; height: 594px;
+    background-color: rgba(0,0,0,.2);
+    float: left;
+    margin: 0 15px 15px 0;
+}
+.main_banner_391_188 {
+    width: 391px; height: 188px;
+    float: left;
+}
+.main_banner_188_188 {
+    width: 188px; height: 188px;
+    float: left;
+}
+.banner_shadow {
+    background-color: rgba(0,0,0,.3);
+}
+.margin_b_15 {
+    margin-bottom: 15px;
+}
+.margin_r_15 {
+    margin-right: 15px;
+}
+
+
+#quick {
+    width: 116px; height: 584px;
+    background-color: rgba(255,0,0,.5);
+    position: absolute; left : 50%; top : 150px;
+    margin-left: 515px;
+}
+
+
+/* 푸터 영역 */
+#footer {
+    width: 100%; height: 147px; 
+    background-color: rgba(255,255,0,.3);
+}
+#footer_wrap {
+    width: 1000px; height: 147px;
+    background-color: rgba(255,255,0,.2);
+    margin: auto;
+}
+#footer_logo {
+    width: 200px; height: 147px;
+    background-color: rgba(0,0,0,.4);
+    float: left;
+
+}
+#copyright {
+    width: 750px; height: 147px;
+    background-color: rgba(0,0,0,.4);
+    float: right;
+
+}
