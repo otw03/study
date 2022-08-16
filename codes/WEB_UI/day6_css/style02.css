@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0;}
+ul {list-style: none;}
+
+
+/* 데스크탑 퍼스트 */
+#wrap {
+    width: 960px; height: 1460px;     
+    background-color: rgba(0,0,0,.1); 
+    margin: auto;
+}
+header {
+    width: 960px; height: 150px; 
+    background-color: rgba(255,0,0,.1);
+    margin-bottom: 10px;   
+    /* position: relative; */
+}
+header h1,
+header p {height: 60px; padding-left: 10px; }
+nav {
+    width: 960px; height: 30px; 
+    background-color: rgba(0,255,0,.1);
+    /* position: absolute;
+    bottom: 0; */
+}
+nav ul li {
+    width: 192px; height: 30px; 
+    background-color: rgba(0,0,0,.1); 
+    float: left;
+/*     text-align: center; */
+}
+/* nav ul li:nth-child(2n) {
+    background-color: rgba(0,255,0,.2);
+} */
+section {
+    width: 960px; height: 600px; 
+    background-color: rgba(0,0,255,.1);
+}
+article {
+    width: 220px; height: 280px; 
+    background-color: rgba(255,255,0,.2); 
+    float: left;
+    margin: 10px;
+/*     text-align: center; */
+}
+/* float이 적용된 요소에는 상하의 마진이 안 겹쳐진다 (상10 + 하10 = 20) */
+/* article h4 {
+    font-size: 26px;
+    padding-top: 24px;
+    margin-bottom: 10px;
+} */
+/* article p {
+    font-size: 18px;
+} */
+figure {
+    width: 220px; height: 150px; 
+    background-color: rgba(255,0,255,.1);
+}
+footer {
+    width: 960px; height: 100px; 
+    background-color: rgba(0,255,255,.1); 
+    clear: both;
+}
+
+/* 360 600 960 */
+
+/* 태블릿 버전 600 ~ 959px */
+@media screen and (min-width: 600px) and (max-width: 959px) {
+    #wrap {width: 100%; height: 1857px;}
+    header {width: 100%px;}
+    nav {width: 100%;}
+    nav ul li {width: 20%;}
+    section {width: 100%; height: 400px;}
+    article {width: 46%; margin: 10px 2%; /* width: 46.66666666666667%; margin: 10px 1.666666666666667%; */} /* 280px / 600px * 100 */
+    figure {width: 100%;} /* 바로 상위 요소를 기준으로 사이즈 계산해야 함 */
+    footer {width: 100%;}
+}
+
+
+/* 모바일버전 0 ~ 599px */
+@media screen and (max-width: 599px) {
+    #wrap {width: 100%; height: 2910px;}
+    header {width: 100%; height: 270px;}
+    nav {width: 100%; height: 150px;}
+    nav ul li {width: 100%;}
+    section {width: 100%; height: 200px;}
+    article {width: 94%; margin: 10px auto/* 3% */; float: none;}
+    /* float: none; 은 아예 적용된 적 없는 것 처럼 보여준다*/
+    figure {width: 100%;}
+    footer {width: 100%;}
+}

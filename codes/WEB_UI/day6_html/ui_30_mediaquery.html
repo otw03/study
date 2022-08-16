@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 메타태그 뷰포트 속성 : 디바이스 사이즈에 맞게 표현될 수 있게끔 설정해주는 부분. 모바일(태블릿 버전에서 특히 중요함!)
+        width=device-width : 화면 너비를 기기의 너비에 맞추겠다
+        initial-scale=1.0 : 초기 화면 배율 -->
+    <title>미디어쿼리</title>
+    <style>
+        body {color: #fff; font-size: 30px;}
+        /* mediaqueri.es 미디어쿼리 참고 사이트 */
+        /* 모바일버전(0~767) */
+        /* @media 로 미디어쿼리 시작을 알림
+        미디어의 종류가 스크린이고, 최대 너비값이 767px 일 때 {} 안의 내용을 실행해라.
+        and는 조건이 모두 true일 때 실행
+        */
+        @media screen and (max-width: 767px) {
+            body {background: red;}            
+        }
+
+        /* 태블릿버전(0~767) */
+        @media screen and (min-width: 768px) and (max-width: 959px) {
+            body {background: green;}            
+        }
+
+        /* 데스크탑버전(0~767) */
+        @media screen and (min-width: 960px) {
+            body {background: blue;}            
+        }
+    </style>
+</head>
+<body>
+    미디어쿼리 중단점(break point)을 세 개 만듭니다. <br>
+    모바일버전 : 0 ~ 767px(빨간색배경) <br>
+    태블릿버전 : 768px ~ 959px(초록색배경) <br>
+    데스크탑버전 : 960px ~ (파란색배경)
+</body>
+</html>

@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0;}
+ul {list-style: none;}
+
+
+/* 데스크탑 퍼스트 방식
+데스크탑버전을 기준으로 먼저 CSS레이아웃을 작성,
+태블릿, 모바일 버전의 미디어쿼리를 작성해줌.
+변경되는 것들만 조건에 맞게 넣어주면 됨
+*/
+#wrap {
+    width: 1200px; height: 1240px; 
+    background-color: rgba(0,0,0,.1); 
+    margin: auto;
+}
+header {
+    width: 1200px; height: 100px; 
+    background-color: rgba(255,0,0,.1);  
+}
+nav {
+    width: 1200px; height: 40px; 
+    background-color: rgba(0,255,0,.1); 
+}
+nav ul li {
+    width: 200px; height: 40px; 
+    background-color: rgba(0,0,0,.1); 
+    float: left;
+}
+section {
+    width: 1200px; height: 600px; 
+    background-color: rgba(0,0,255,.1);
+}
+article {
+    width: 600px; height: 200px; 
+    background-color: rgba(255,255,0,.2); 
+    float: left;
+}
+footer {
+    width: 1200px; height: 100px; 
+    background-color: rgba(0,255,255,.1); 
+    clear: both;
+}
+
+
+/* 태블릿 버전 768 ~ 1199px */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    #wrap {width: 768px; height: 1040px;}
+    header {width: 768px; height: 60px;}
+    nav {width: 768px; height: 80px;}
+    nav ul li {width: 256px;}
+    section {width: 768px; height: 400px;}
+    article {width: 384px;}
+    footer {width: 768px;}
+}
+
+
+/* 모바일버전 0 ~ 767px */
+@media screen and (max-width: 767px) {
+    #wrap {width: 360px; height: 1380px;}
+    header {width: 360px; height: 60px;}
+    nav {width: 360px; height: 120px;}
+    nav ul li {width: 180px;}
+    section {width: 360px; height: 300px;}
+    article {width: 360px;}
+    footer {width: 360px;}
+}

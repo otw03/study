@@ -22,5 +22,7 @@
 [22_animation](./documents/22_animation.md)  
 [23_webfont](./documents/23_webfont.md)  
 [24_after_before](./documents/24_after_before.md)  
-
-
+[25_vertical-align](./documents/25_vertical-align.md)  
+[26_viewport_and_mediaquery](./documents/26_viewport_and_mediaquery.md)  
+[27_Fluid_Grid](./documents/27_Fluid_Grid.md)  
+[]()
