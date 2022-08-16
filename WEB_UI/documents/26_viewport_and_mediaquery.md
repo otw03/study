@@ -20,7 +20,7 @@ vw : 1vw는 뷰포트 너비의 1%
 
 vh : 1vh는 뷰포트 높이의 1%  
 
-[**뷰포트 크기 알려주는 곳](https://yesviz.com/devices.php) 링크**  
+[**뷰포트 크기 알려주는 곳**](https://yesviz.com/devices.php) 링크  
 
 ---
 
