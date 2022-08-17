@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0; border: 0;}
+ul {list-style: none;}
+a {text-decoration: none;}
+
+
+
+/* 모바일퍼스트 */
+#wrap {
+    width: 360px; /* height: 4384px; */
+    background-color: rgba(0,0,0,.1); 
+    margin: auto;
+}
+header {width: 360px; height: 120px; background-color: rgba(255,0,0,.1); padding-top: 20px; box-sizing: border-box; text-align: center;}
+
+#lnb {width: 360px; height: 120px; background-color: rgba(0,255,0,.1); /* margin-bottom: 20px; */}
+#lnb ul li {width: 360px; height: 30px; background-color: rgba(0,0,0,.1);}
+#lnb ul li a {width: 100%; height: 100%; display: block; background-color: #000; color: #fff; text-align: center; line-height: 30px; transition: .5s;}
+#lnb ul li a:hover {background-color: #00f;}
+
+
+#main_visual {width: 360px; height: 250px; background: url("../../../WEB_UI/images/day7_images/art_img/main_visual.jpg") no-repeat center /cover; margin-bottom: 10px;/* display: none; */}
+
+.main_img {width: 340px; /* height: 423px; */ background-color: rgba(255,255,0,.1); margin: 0 auto 20px; position: relative;}
+/* block 속성을 가진 태그(figure)에 높이가 없을 경우
+안에 inline 속성을 가진 태그가 들어가면 자식요소만큼의 높이 외에 하단에 간격이 생김.
+vertical-align 속성의 기본값이 baseline 이라서 생기는 문제임.
+해결 방법 : inline속성을 가진 자식요소의 vertical-align 속성을 top으로 설정.
+*/
+.main_img img {width: 100%; vertical-align: top;}
+.main_img a {width: 100%; height: 100%; display: block; position: absolute; left: 0; top: 0; opacity: 0; transition: .5s;}
+.main_img a:hover {opacity: 1;}
+.main_img_caption {width: 340px; height: 200px; background-color: rgba(0,0,0,.8); position: absolute; bottom: 0; text-align: center; padding: 20px; box-sizing: border-box; color: #fff;}
+.main_img_caption h4 { font-size: 20px; margin-bottom: 10px;}
+/* #figure_container::after {
+    content: ""; 
+    display: block; 
+    clear: both;} */
+/* 비어있는 박스를 만들고 클리어를 했다
+float요소 뒤에 클리어 해줄 때 float요소를 감싸는 부모박스의 ::after영역에 빈 박스를 만들어 클리어 해줌
+*/
+
+
+/* 모바일 버튼 영역 */
+#mobile_btn {width: 240px; height: 60px; background-color: rgba(255,0,255,.1); margin: 50px auto;}
+#mobile_btn ul li {width: 60px; height: 60px; background-color: rgba(0,0,0,.1); float: left; margin-right: 30px;}
+#mobile_btn ul li:last-child {margin-right: 0;}
+#mobile_btn ul li a {width: 60px; height: 60px; display: block; background-color: #000; color: #fff; border-radius: 50%; text-align: center; line-height: 60px; font-size: 20px; }
+#mobile_btn ul li a span {
+    /* opacity: 0; 영역을 차지를 하고, 스크린리더가 읽지 못함 */
+    /* display: none; 스크린리더가 읽지 못함*/
+    /* font-size: 0; 스크린리더가 읽지 못함 */
+    
+    /* 이미지 대체 기법 */
+    /* 첫번째 방법 */
+    /* 문단 들여쓰기 속성. block속성의 요소에만 적용된다. */
+    /* display: block;
+    text-indent: -99999px; */ 
+      
+    /* 두번째 방법 */
+    position: absolute;
+    left: -9999px;
+}
+/* 이모티콘 가운데 놓는 방법 */
+/* 
+1. 각 요소를 inline-block 요소로 만들어 주면 글자처럼 변해서 text-align 사용 가능 
+2. 딱 맞게 하면 1번 방법은 깔끔하지 않음
+부모박스를 사이즈를 변경해서 부모박스를 margin: auto; 해준다
+오른쪽 공간이 모자라서 내려간 요소를
+#mobile_btn ul li:last-child {margin-right: 0;} 해준다
+3. margin을 양 옆에 반반씩 줘서 부모의 크기를 마진까지 포함한 크기로 만들어줘도 된다.
+부모박스를 270px으로 만들고 margin: 0 15px 해준다 (마지막 요소에서 마진을 안 빼줘도 됨) 
+*/
+/* #mobile_btn ul li a span {display:block; text-indent: -99999px;} */
+/* text-indent: -99999px;로 글자 지우기 text-indent는 블록요소에만 먹히기 때문에 display:block; 해주기*/
+/* #mobile_btn ul li a {width: 60px; height: 60px; display: block; background-color: aqua; border-radius: 30px; text-align: center; line-height: 60px; font-size: 24px; color: #fff;} */
+
+/* footer */
+footer {width: 360px; /* height: 200px; */ background-color: rgba(0,255,255,.1); padding: 20px 10px; box-sizing: border-box; /* text-align: center; */}
+#footer_logo {width: 340px; height: 60px; background: url("../../../WEB_UI/images/day7_images/art_img/footer_logo.png") no-repeat center /contain; margin-bottom: 10px;}
+#footer_logo span {display: block; text-indent: -9999px;}
+#copyright {width: 340px; /* height: 90px; */ background-color: rgba(0,0,0,.2); text-align: center;}
+#copyright span {margin: 0 10px;}
+#copyright span:first-of-type,
+#copyright span:nth-of-type(5),
+#copyright span:last-of-type {margin-left: 0;}
