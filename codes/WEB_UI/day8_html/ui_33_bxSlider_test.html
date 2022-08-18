@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BX Slider 제이쿼리</title>
+    
+
+    <!-- BX슬라이더의 CSS 파일. CDN 방식으로 불러와서 연결해서 사용. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    
+    <!-- 제이쿼리 라이브러리 파일. 제이쿼리를 이용하기 위해 설치하는 개념. 이 파일이 있어야만 제이쿼리 문법을 사용할 수가 있다. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- BX Slider 스크립트 파일. BX슬라이더의 동작을 짜놓은 코드 파일 -->
+    <!-- <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script> -->
+    <script src="../day8_js/jquery.bxslider.js"></script>
+
+    <!-- BX슬라이더를 실제로 실행시켜주는 부분. -->
+    <script>
+        $(document).ready(function(){
+        $('.slider').bxSlider({
+            mode: "fade",
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="slider">
+        <div><img src="../../../WEB_UI/images/day7_images/TNT_img/mdpick_img_01.jpg" alt=""></div>
+        <div><img src="../../../WEB_UI/images/day7_images/TNT_img/mdpick_img_02.jpg" alt=""></div>
+        <div><img src="../../../WEB_UI/images/day7_images/TNT_img/mdpick_img_03.jpg" alt=""></div>
+    </div>
+</body>
+</html>

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TOM N TOMS</title>
     <!-- CSS파일 -->
-    <link rel="stylesheet" href="../day7_css/style.css">
+    <!-- <link rel="stylesheet" href="../day7_css/style.css"> -->
+    <link rel="stylesheet" href="../day7_css/style_flex.css">
 
     <!-- 폰트어썸 키트 -->
     <script src="https://kit.fontawesome.com/f0e73cfa04.js" crossorigin="anonymous"></script>
@@ -16,6 +17,60 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- 파비콘 설정(https://www.favicon-generator.org/) : 투명배경, 가장 큰 사이즈 기준으로 만들어서 업로드 -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../../../WEB_UI/images/day7_images/favicon//apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../../WEB_UI/images/day7_images/favicon//apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../../WEB_UI/images/day7_images/favicon//apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../../WEB_UI/images/day7_images/favicon//apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../../WEB_UI/images/day7_images/favicon//apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../../WEB_UI/images/day7_images/favicon//apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../../WEB_UI/images/day7_images/favicon//apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../../WEB_UI/images/day7_images/favicon//apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../WEB_UI/images/day7_images/favicon//apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../../WEB_UI/images/day7_images/favicon//android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../WEB_UI/images/day7_images/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../../WEB_UI/images/day7_images/favicon//favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../WEB_UI/images/day7_images/favicon/favicon-16x16.png">
+    <!-- 해당 아이콘의 속성을 설정해주는 용도의 파일 -->
+    <link rel="manifest" href="../../../WEB_UI/images/day7_images/favicon//manifest.json">
+    <!-- IE10버전의 고정 타일 아이콘 설정 -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../../../WEB_UI/images/day7_images/favicon//ms-icon-144x144.png">
+    <!-- 모바일 크롬 브라우저 툴바영역 컬러 설정 -->
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- 
+        html 문법 검사기(웹표준 준수 여부 확인)
+        https://validator.w3.org/
+
+        css 문법 검사기
+        https://jigsaw.w3.org/css/validator/
+     -->
+
+    <!-- BX슬라이더 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <!-- BX슬라이더 -->
+
+    <!-- BX슬라이더를 실제로 실행시켜주는 부분. -->
+    <script>
+        $(document).ready(function(){
+        $('#bx_slider').bxSlider({
+            mode: "fade",
+            auto: true,
+            pause: 1500
+            });
+        });
+    </script>
+
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
 </head>
 <body>
     <header id="header">
@@ -32,14 +87,41 @@
             <div id="m_smile_btn">
                 <a href="#"><img src="../../../WEB_UI/images/day7_images/TNT_img/smile_img_m.jpg" alt="탐앤탐스 SMILE Campaign"></a>
             </div>
+            <div id="d_smile_btn">
+                <a href="#"><img src="../../../WEB_UI/images/day7_images/TNT_img/smile_img.png" alt="탐앤탐스 SMILE Campaign"></a>
+            </div>
+            <div id="right_menu">
+                <div id="d_gnb">
+                    <ul>
+                        <li><a href="#">매장찾기</a></li>
+                        <li><a href="#">탐앤탐스 몰</a></li>
+                        <li><a href="#">english</a></li>
+                        <li><a href="#">chinese</a></li>
+                    </ul>
+                </div>
+                <div id="d_lnb">
+                    <ul>
+                        <li><a href="#">MENU</a></li>
+                        <li><a href="#">EVENT</a></li>
+                        <li><a href="#">STORE</a></li>
+                        <li><a href="#">SERVICE</a></li>
+                        <li><a href="#">COMMUNITY</a></li>
+                        <li><a href="#">TOM N TOMS</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </header>
     <div id="main_visual">
         <div class="center_wrap">
+            <div id="bx_slider">
+                <div class="slider_box"><img src="../../../WEB_UI/images/day7_images/TNT_img/visual_img_01.jpg" alt=""></div>
+                <div class="slider_box"><img src="../../../WEB_UI/images/day7_images/TNT_img/visual_img_02.jpg" alt=""></div>
+            </div>
             <p>Feel More Energy 천연 카페인·필수 비타민 7종, 에너지 부스팅, 가벼운 0kcal</p>
         </div>
     </div>
-    <div id="notice">
+    <div id="notice" data-aos="fade-up">
         <div class="center_wrap">
             <div id="notice_box">
                 <ul>
@@ -61,9 +143,9 @@
             </div>
         </div>
     </div>
-    <section id="toms_menu">
+    <section id="toms_menu" data-aos="fade-up">
         <div class="center_wrap">
-            <h2><span>TOM N TOMS MENU</span></h2>
+            <h2><span>TOM N TOMS</span> MENU</h2>
             <div id="toms_menu_slide">
                 <ul>
                     <li>
@@ -85,10 +167,16 @@
                         </figure>
                     </li>
                 </ul>
+                <div class="slide_btn slide_left_btn">
+                    <a href="#"><i class="fa-solid fa-angle-left"></i><span>이전</span></a>
+                </div>
+                <div class="slide_btn slide_right_btn">
+                    <a href="#"><i class="fa-solid fa-angle-right"></i><span>다음</span></a>
+                </div>
             </div>
         </div>
     </section>
-    <section id="toms_about">
+    <section id="toms_about" data-aos="fade-up">
         <div class="center_wrap">
             <h2 class="toms_about_title">
                 대한민국 대표 스페셜티 커피 브랜드<br>
@@ -104,7 +192,7 @@
             </div>
         </div>
     </section>
-    <section id="toms_md">
+    <section id="toms_md" data-aos="fade-up">
         <div class="center_wrap">
             <h2><span>TOM N TOMS MD's PICK</span></h2>
             <div id="mdpick">
@@ -128,10 +216,16 @@
                         </figure>
                     </li>
                 </ul>
+                <div class="slide_btn slide_left_btn">
+                    <a href="#"><i class="fa-solid fa-angle-left"></i><span>이전</span></a>
+                </div>
+                <div class="slide_btn slide_right_btn">
+                    <a href="#"><i class="fa-solid fa-angle-right"></i><span>다음</span></a>
+                </div>
             </div>
         </div>
     </section>
-    <section id="toms_sns">
+    <section id="toms_sns" data-aos="fade-up">
         <div class="center_wrap">
             <h2># <span>TOM N TOMS SNS</span></h2>
             <div id="toms_sns_box">
@@ -156,7 +250,7 @@
     <div id="gotop">
         <a href="#"><i class="fa-solid fa-angle-up"></i><span>상단으로 이동</span></a>
     </div>
-    <footer id="footer">
+    <footer id="footer" data-aos="fade-up">
         <div class="center_wrap">
             <div id="follow">
                 <h3>Follow us</h3>
@@ -179,23 +273,28 @@
                 <h3>고객만족센터</h3>
                 <a href="tel:02-3412-0781">02. 3412. 0781</a>
             </div>
-            <div id="fnb">
-                <ul>
-                    <li><a href="#">회사소개</a></li>
-                    <li><a href="#">채용안내</a></li>
-                    <li><a href="#">프랜차이즈</a></li>
-                    <li><a href="#">계열사소개</a></li>
-                    <li><a href="#">공지사항</a></li>
-                    <li><a href="#">고객만족센터</a></li>
-                    <li><a href="#">찾아오시는 길</a></li>
-                    <li><a href="#">가맹점 전용 게시판</a></li>
-                </ul>
+            <div id="footer_center">
+                <div id="fnb">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">채용안내</a></li>
+                        <li><a href="#">프랜차이즈</a></li>
+                        <li><a href="#">계열사소개</a></li>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">고객만족센터</a></li>
+                        <li><a href="#">찾아오시는 길</a></li>
+                        <li><a href="#">가맹점 전용 게시판</a></li>
+                    </ul>
+                </div>
+                <address id="company">
+                    <span>서울특별시 광진구 아차산로 426</span><span>대표 : 명선철</span><br><span>사업자등록번호 : 215-86-65050</span><span>개인정보 책임자 : 이동규</span><span>TEL. 02-3412-0781</span><span>FAX. 02-3412-1907</span>
+                </address>
+                <p id="copyright">COPYRIGHT ⓒ 2022 TOM N TOMS COFFEE. ALL RIGHTS RESERVED.</p>
             </div>
-            <address id="company">
-                <span>서울특별시 광진구 아차산로 426</span><span>대표 : 명선철</span><br><span>사업자등록번호 : 215-86-65050</span><span>개인정보 책임자 : 이동규</span><span>TEL. 02-3412-0781</span><span>FAX. 02-3412-1907</span>
-            </address>
-            <p id="copyright">COPYRIGHT ⓒ 2022 TOM N TOMS COFFEE. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
