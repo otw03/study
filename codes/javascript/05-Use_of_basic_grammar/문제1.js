@@ -7,3 +7,9 @@ for(let i=9; i>=0; i--) {
         console.log(i);
     }
 }
+
+/* 풀이2 */
+
+for(let j=9; j>=0; j-=2) {
+    console.log(j);
+}
