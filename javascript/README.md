@@ -3,3 +3,5 @@
 [03-연산자](documents/03-operator.md)  
 [04-프로그램-흐름제어](documents/04-program_flow_control.md)  
 [05-기본 문법 활용](documents/05-Use_of_basic_grammar.md)  
+[06-배열](documents/06-Array.md)  
+[]()  
