@@ -7,7 +7,11 @@
 [- 5) 반복문을 통한 활용](#5-반복문을-통한-활용)  
 [02. 2차 배열](#02-2차-배열)  
 [- 1) 2차 배열 생성하기](#1-2차-배열-생성하기)  
-[]()  
+[- 2) 2차 배열의 원소에 접근하기](#2-2차-배열의-원소에-접근하기)  
+[- 3) 2차 배열의 행, 열 크기 구하기](#3-2차-배열의-행-열-크기-구하기)  
+[- 4) 가변배열](#4-가변배열)  
+[- 5) 2차 배열과 반복문](#5-2차-배열과-반복문)  
+[연습 문제](#연습-문제)  
 
 배열은 하나의 변수 안에 여러 개의 데이터를 **그룹화**해서 저장하는 Javascript의 가장 기본적인 **자료구조** 입니다.  
 
@@ -597,7 +601,7 @@ console.log(data);
 const myArr10 = [ [ ... ], [...] ]
 ```
 
-### 1) 다른 배열을 원소로 갖는 배열
+### 다른 배열을 원소로 갖는 배열
 
 ```jsx
 const a = [1, 2];
@@ -612,7 +616,13 @@ console.log(myArr1);
 [ [ 1, 2 ], [ 4, 5, 6, 7 ] ]
 ```
 
-### 2) 축약표현
+## 2) 2차 배열의 원소에 접근하기
+
+2행 3열인 경우 행의 인덱스는 0부터 1까지, 열의 인덱스는 0부터 2까지 존재한다.  
+
+배열에 저장된 원소에 접근하기 위해서는 변수이름 뒤에 행, 열의 순서로 인덱스를 명시한다.  
+
+### 축약표현
 
 2행 3열 배열 만들기  
 
@@ -627,3 +637,365 @@ console.log(myArr2);
 [ [ 1, 2, 3 ], [ 4, 5, 6 ] ]
 ```
 
+### 2차 배열의 원소 접근
+
+행->열 순으로 인덱스를 열거한다.  
+
+```jsx
+console.log(myArr2[0][0]);  // --> 1
+console.log(myArr2[0][1]);  // --> 2
+console.log(myArr2[0][2]);  // --> 3
+console.log(myArr2[1][0]);  // --> 4
+console.log(myArr2[1][1]);  // --> 5
+console.log(myArr2[1][2]);  // --> 6
+```
+
+### Array 클래스를 통한 2차 배열
+
+```jsx
+const c = new Array(10, 20, 30);
+const d = new Array(50, 60, 70);
+const myArr3 = new Array(c, d);
+console.log(myArr3);
+
+const myArr4 = new Array( new Array(10, 20, 30), new Array(50, 60, 70) );
+console.log(myArr4);
+```
+
+출력 결과  
+
+```
+[ [ 10, 20, 30 ], [ 50, 60, 70 ] ]
+[ [ 10, 20, 30 ], [ 50, 60, 70 ] ]
+```
+
+## 3) 2차 배열의 행, 열 크기 구하기
+
+### 행의 크기
+
+2차 배열에 대한 길이를 직접 구하면 행의 크기를 알 수 있다.  
+
+```jsx
+const myArr = [ 
+    [1, 2, 3], 
+    [4, 5, 6] 
+];
+
+// 배열 자체의 길이는 행을 의미한다.
+console.log(myArr.length);       // --> 2
+```
+
+### 열의 크기
+
+2차 배열의 모든 행에 대한 열 크기가 항상 동일하다는 보장이 없기 때문에 열의 크기는 각 행마다 개별적으로 구해야 한다.  
+
+```jsx
+const myArr = [ 
+    [1, 2, 3], 
+    [4, 5, 6] 
+];
+
+// 배열의 각 행단위로 열을 조회할 수 있다.
+console.log(myArr[0].length);       // --> 3
+console.log(myArr[1].length);       // --> 3
+```
+
+## 4) 가변배열
+
+2차 배열의 정확한 개념은 1차 배열의 각 원소가 다른 배열로 구성된 형태이다.  
+
+원소로서 포함되는 각 배열의 크기가 동일하지 않은 경우를 가변 배열이라고 한다.  
+
+항상 배열의 모든 행이 동일한 열로 구성되는 것은 아니다. (모든 줄의 칸 수가 같다는 보장은 없다는 의미)  
+
+> 가변배열이 자주 등장하는 것은 아니다. 95% 이상의 경우가 모든 행마다 열 크기가 동일한 경우이다.
+> 
+
+```jsx
+const a = [1, 3, 5, 7, 9];
+const b = [2, 4, 6];
+
+const data = [a, b];
+console.log(data);
+
+for(let i=0; i<data.length; i++) {
+    console.log(data[i]);
+
+    for(let j=0; j<data[i].length; j++) {
+        console.log(data[i][j]);
+    }
+}
+```
+
+출력 결과
+
+```
+[ [ 1, 3, 5, 7, 9 ], [ 2, 4, 6 ] ]
+[ 1, 3, 5, 7, 9 ]
+1
+3
+5
+7
+9
+[ 2, 4, 6 ]
+2
+4
+6
+```
+
+## 5) 2차 배열과 반복문
+
+### 배열의 모든 원소 스캔하기
+
+2차 배열의 모든 원소를 반복문으로 스캔하기 위해서는 **중첩 반복문**을 사용해야 한다.  
+
+이 때 부모 반복문은 **행**에 대해 관여하고, 자식 반복문은 **열**에 대해 관여한다.  
+
+```jsx
+// 2차 배열을 반복문으로 탐색할 때는 2중 반복문이 사용된다.
+// 바깥의 반복문이 행을 담당
+for(let i=0; i<myArr.length; i++) {
+    console.group(i + "번째 행 ----------");
+    console.log(myArr[i]);
+
+    // 안쪽의 반복문은 i번째 행에 대한 열을 담당
+    for(let j=0; j<myArr[i].length; j++) {
+        console.log(myArr[i][j]);
+    }
+    console.groupEnd();
+}
+```
+
+출력 결과  
+
+```
+0번째 행 ----------
+  [ 1, 2, 3 ]
+  1
+  2
+  3
+1번째 행 ----------
+  [ 4, 5, 6 ]
+  4
+  5
+  6
+```
+
+### for-of문을 활용한 탐색
+
+```jsx
+console.group("2차배열의 탐색");
+
+const myArr1 = [ 
+    [1, 2, 3], 
+    [4, 5, 6] 
+];
+
+for(const item of myArr1) {
+    console.log(item);
+
+    for(const sub of item) {
+        console.log(sub);
+    }
+}
+
+console.groupEnd();
+```
+
+출력 결과  
+
+```
+2차배열의 탐색
+  [ 1, 2, 3 ]
+  1
+  2
+  3
+  [ 4, 5, 6 ]
+  4
+  5
+  6
+```
+
+---
+
+### 11-성적구하기.js
+
+학생별 총점과 평균 구하기  
+
+```jsx
+/** 
+학생별 총점과 평균 구하기
+
+| 이름 | 국어 | 영어 | 수학 |
+| 철수 |  92  |  81  |  76  |
+| 영희 |  72  |  95  |  84  |
+| 민혁 |  80  |  86  |  98  |
+*/
+
+// 학생 성적표 배열
+const grade = [
+    [ "철수", 92, 81, 76],
+    [ "영희", 72, 95, 84],
+    [ "민혁", 80, 86, 98]
+];
+
+// 이 위치에서 변수를 초기화 하면 모든 학생의 총점.
+let sum = 0;
+
+// 2차 배열 탐색
+for(let i=0; i<grade.length; i++) {
+
+    // 학생 한명을 의미하는 부모 반복문 안에서 변수를 초기화 하면 학생 개인별 총점
+    let personal_sum = 0;
+
+    // i번째 행에서 0번째 열은 학생 이름이므로 합산에서 제외한다.
+    for(let j=1; j<grade[i].length; j++) {
+        // console.log(grade[i][j]);
+        sum += grade[i][j];
+        // console.log(sum);
+        personal_sum += grade[i][j];
+        // console.log(personal_sum);
+    }
+
+    // 이름은 과목수에서 제외해야 하므로 "길이-1"
+    const personal_avg = personal_sum / (grade[i].length-1);
+    console.log("%s의 총점은 %d이고 평균은 %d입니다.", grade[i][0], personal_sum, personal_avg);
+}
+
+console.log("모든 학생의 총점은 %d입니다.", sum);
+```
+
+출력 결과  
+
+```
+철수의 총점은 249이고 평균은 83입니다.
+영희의 총점은 251이고 평균은 83.66666666666667입니다.
+민혁의 총점은 264이고 평균은 88입니다.
+모든 학생의 총점은 764입니다.
+```
+
+---
+
+### 12-순차적으로_증가하는_원소.js
+
+이번달 달력 구하기  
+
+```jsx
+/** 
+ * 6행 7열로 구성된 2차 배열을 준비하고,
+ * 배열의 모든 칸에 1부터 순차적으로 증가하는 값을 할당하시오.
+ * 단, i가 0일 때 j가 3보다 작다면 0을 대입하고 인덱스가 3인 위치부터 1씩 증가하는 값을 할당해야 합니다.
+ * 또한 counter가 30보다 크다면 그 자리에는 0을 대신 할당해야 합니다.
+ */
+
+// 6행 7열의 빈 배열 만들기
+var data = new Array(6);
+
+for(let i=0; i<data.length; i++) {
+    data[i] = new Array(7);
+}
+
+console.log(data);
+
+// 1씩 증가할 값
+let counter = 1;
+
+for(let i=0; i<data.length; i++) {
+    for(let j=0; j<data[i].length; j++) {
+        if(i == 0 && j < 3 || counter > 30) {
+            data[i][j] = 0;
+        } else {
+            data[i][j] = counter++;
+        }
+    }
+}
+
+console.log(data);
+
+/** 출력하기 */
+// "\t" -> 탭키
+// "\n" -> 줄바꿈
+for(let i=0; i<data.length; i++) {
+    let str = "";
+    for(let j=0; j<data[i].length; j++) {
+        if(data[i][j] == 0) {
+            str += "\t";
+        } else {
+            str += data[i][j] + "\t";
+        }
+    }
+
+    console.log(str);
+}
+```
+
+출력 결과  
+
+```
+[
+  [ <7 empty items> ],
+  [ <7 empty items> ],
+  [ <7 empty items> ],
+  [ <7 empty items> ],
+  [ <7 empty items> ],
+  [ <7 empty items> ]
+]
+[
+  [
+    0, 0, 0, 1,
+    2, 3, 4
+  ],
+  [
+    5,  6,  7, 8,
+    9, 10, 11
+  ],
+  [
+    12, 13, 14, 15,
+    16, 17, 18
+  ],
+  [
+    19, 20, 21, 22,
+    23, 24, 25
+  ],
+  [
+    26, 27, 28, 29,
+    30,  0,  0
+  ],
+  [
+    0, 0, 0, 0,
+    0, 0, 0
+  ]
+]
+			1	2   3   4	
+5	6	7   8	9   10	11	
+12	13	14	15	16	17	18	
+19	20	21	22	23	24	25	
+26	27	28	29	30        
+                          
+```
+
+# 연습 문제  
+
+[문제1](../../codes/javascript/06-Array/문제1.js)  
+
+[문제2](../../codes/javascript/06-Array/문제2.js)  
+
+[문제3](../../codes/javascript/06-Array/문제3.js)  
+
+[문제4](../../codes/javascript/06-Array/문제4.js)  
+
+[문제5](../../codes/javascript/06-Array/문제5.js)  
+
+[문제6](../../codes/javascript/06-Array/문제6.js)  
+
+[문제7](../../codes/javascript/06-Array/문제7.js)  
+
+[문제8](../../codes/javascript/06-Array/문제8.js)  
+
+[문제9](../../codes/javascript/06-Array/문제9.js)  
+
+[문제10](../../codes/javascript/06-Array/문제10.js)  
+
+[문제11](../../codes/javascript/06-Array/문제11.js)  
+
+[문제12](../../codes/javascript/06-Array/문제12.js)  
