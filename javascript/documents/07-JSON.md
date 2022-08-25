@@ -1026,3 +1026,15 @@ undefined
 프로그램 종료~!!
 ```
 
+# 연습 문제  
+
+[문제1](../../codes/javascript/07-JSON/문제1.js)  
+
+[문제2-1](../../codes/javascript/07-JSON/문제2-1.js)  
+
+[문제2-2](../../codes/javascript/07-JSON/문제2-2.js)  
+
+[문제3-1](../../codes/javascript/07-JSON/문제3-1.js)  
+
+[문제3-2](../../codes/javascript/07-JSON/문제3-2.js)  
+

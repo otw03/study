@@ -89,4 +89,4 @@ const copy2 = {};
 // 복사될 copy2가 비어있는 json일 경우 복사.
 // copy2가 비어있지 않으면 누적
 Object.assign(copy2, addr);
-console.log(copy2);
+console.log(copy2);       // 위에서 addr.gu = '강남' 로 addr가 변경되어 있다.
