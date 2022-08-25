@@ -1,4 +1,4 @@
-/** 값복사 (=깊은복사) -->  */
+/** 값복사 (=깊은복사) --> 일반 변수끼리의 복사 */
 let a = 100;
 let b = a;
 console.log("a=" + a + ", b=" + b);
@@ -70,7 +70,7 @@ const addr = {
 const copy = {};
 
 for(let key in addr) {
-    // copy,city와 copy.gu와 동일한 처리
+    // copy.city와 copy.gu와 동일한 처리
     copy[key] = addr[key];
 }
 
