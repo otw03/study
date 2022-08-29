@@ -1,4 +1,16 @@
-# 09-object_Prototype
+# 09-프로토타입(Prototype)  
+[01. 객체의 의미](#01-객체의-의미)  
+[02. 생성자 함수](#02-생성자-함수)  
+[- 1) 생성자 함수 정의하기](#1-생성자-함수-정의하기)  
+[- 2) 생성자에 멤버변수 포함시키기](#2-생성자에-멤버변수-포함시키기)  
+[- 3) 파라미터를 갖는 생성자](#3-파라미터를-갖는-생성자)  
+[03. 메서드](#03-메서드)  
+[- prototype 속성](#1-prototype-속성)  
+[04. getter, setter](#04-getter-setter)  
+[- 1) getter, setter 정의하기](#1-getter-setter-정의하기)  
+[- 2) getter, setter 활용하기](#2-getter-setter-활용하기)  
+[05. JSON 구문 형식을 활용한 Prototype 정의](#05-json-구문-형식을-활용한-prototype-정의)  
+[- 클래스 완전체 정의하기](#1-클래스-완전체-정의하기)  
 
 프로그래밍 언어의 종류에는 **객체지향 언어**와 **절차지향 언어**가 있다.  
 
@@ -119,7 +131,7 @@ User2 { _id: 'hello', _email: 'hello@javascript.com' }
 User2 { _id: 'world', _email: 'bar@javascript.com' }
 ```
 
-# 02. 메서드
+# 03. 메서드
 
 객체에 포함된 함수.  
 
@@ -206,7 +218,7 @@ teacher.logout();
 로그아웃 되었습니다. -> id=선생님, email=teacher@naver.com
 ```
 
-# 03. getter, setter
+# 04. getter, setter
 
 객체지향에서는 **객체를 통한 멤버변수의 직접 접근**이 멤버변수에 값을 대입하는 과정에서 그 값의 적절성을 판단할 수 없고, **무조건적으로 대입하기 때문에 코드 보안에 부적절**하다고 본다.  
 
@@ -308,7 +320,7 @@ email에 대한 getter 호출됨
 friend@hanmail.net
 ```
 
-# 04. JSON 구문 형식을 활용한 Prototype 정의
+# 05. JSON 구문 형식을 활용한 Prototype 정의
 
 `생성자이름.prototype = { ... }` 형식으로 getter, setter, 메서드 등을 한번에 추가할 수 있다.  
 
@@ -475,3 +487,14 @@ member1.logout();
 [Member] 로그인되었습니다. username=world, password=4321
 [Member] 로그아웃되었습니다. username=, password=
 ```
+
+
+# 연습 문제  
+
+[문제1](../../codes/javascript/09-Object_Prototype/문제1.js)  
+
+[문제2](../../codes/javascript/09-Object_Prototype/문제2.js)  
+
+[문제3](../../codes/javascript/09-Object_Prototype/문제3.js)  
+
+[문제4](../../codes/javascript/09-Object_Prototype/문제4.js)  

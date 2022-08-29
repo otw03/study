@@ -6,3 +6,4 @@
 [06-배열](documents/06-Array.md)  
 [07-JSON](documents/07-JSON.md)  
 [08-함수](documents/08-function.md)  
+[09-프로토타입](documents/09-Prototype.md)  
