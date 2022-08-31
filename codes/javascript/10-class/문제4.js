@@ -31,50 +31,45 @@ Hello의 잔액은 10000원
 잔액이 부족합니다.
 Hello의 잔액은 10000원
 */
+class Account {
+    #owner;
+    #balance;
 
-function Account(owner, balance) {
-    this._owner = owner; // 이름
-    this._balance = balance; // 금액
-}
+    constructor (owner, balance) {
+        this.#owner = owner; // 이름
+        this.#balance = balance; // 금액
+    }
 
-Account.prototype = {
     // getter와 setter
     get owner() {
-        return this._owner;
-    }, 
+        return this.#owner;
+    } 
     set owner(param) {
-        this._owner = param;
-    }, 
+        this.#owner = param;
+    } 
     
     get balance() {
-        return this._balance;
-    }, 
+        return this.#balance;
+    } 
     set balance(param) {
-        this._balance = param;
-    }, 
+        this.#balance = param;
+    } 
 
     // 금액을 저축하는 메소드 deposit(amount)
-    deposit: function(amount) {
+    deposit(amount) {
         this.balance += amount;
-    },
+    }
 
 
     // 금액을 인출(리턴)하는 메소드 withdraw(long amount)
     // 인출 상한 금액은 잔액까지로 하며, 이 경우 이러한 상황을 출력
-    withdraw: function(long_amount)  {
+    withdraw(long_amount)  {
         if(this.balance >= long_amount) {
             this.balance -= long_amount
+            return 0;
         } else {
             console.log(`잔액이 부족합니다. 인출 상한 금액은 ${this.balance}원 까지 입니다`);
         }
-
-        // 풀이2
-        // if (this.balance < long_amount) {
-        //     console.log("잔액이 부족합니다.");
-        //     return 0;
-        // }
-        // this.balance -= long_amount;
-        // return long_amount;
     }
 };
 

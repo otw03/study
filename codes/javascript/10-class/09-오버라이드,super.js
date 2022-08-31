@@ -62,6 +62,12 @@ class Firebat extends Terran {
     // 생성자 override
     constructor(name) {
         super(name, 500, 50);
+        /* 
+        생성자 재정의
+        상속시 부모 생성자는 무조건 호출되어야 함.
+        단, 자식 class가 override를 통해 부모 생성자 호출 과정을 중간에서 대행하면서 파라미터는 간소화 시킬 수 있다.
+        super(name, 500, 50)가  생성자가 된다.
+        */
     }
 }
 
