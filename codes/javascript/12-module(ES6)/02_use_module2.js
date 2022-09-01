@@ -1,4 +1,7 @@
-// 모듈을 통해서 참조된 객체는 MyModule2의 모든 기능을 내장한 객체가 된다.
+// ES6 import 규칙
+// 순서는 상관 없다
+// 필요없는 기능은 생략 가능
+// 이름은 반드시 동일
 import {name, property, say, home} from './MyModule2.js';
 
 console.log(my.name);
