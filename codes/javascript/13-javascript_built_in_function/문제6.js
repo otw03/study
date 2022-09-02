@@ -15,14 +15,14 @@ let completion = ["josipa", "filipa", "marina", "nikola"];
 function solution(participant, completion) {
     var answer = '';
 
-    // for(let i=0; i<participant.length; i++) {
-    //     let p = participant[i];
+    for(let i=0; i<participant.length; i++) {
+        let p = participant[i];
     
-    //     if(!completion.includes(p)) {
-    //         answer = p;
-    //         break;
-    //     }
-    // }
+        if(!completion.includes(p)) {
+            answer = p;
+            break;
+        }
+    }
 
     // 풀이2
     // participant.some((v, i) => {
@@ -34,11 +34,12 @@ function solution(participant, completion) {
 
     // return answer;
 
-    participant.find((v, i) => {
-        if(!completion.includes(v)) {
-            return true;
-        }
-    });
+    // 풀이3
+    // participant.find((v, i) => {
+    //     if(!completion.includes(v)) {
+    //         return true;
+    //     }
+    // });
 }
 
 
