@@ -8,9 +8,9 @@ email.split("@").forEach((v) => {
 
 
 // 풀이2
-let p = email.indexOf("@");
-let id = email.substring(0, p);
-let domain = email.substring(p + 1);
+// let p = email.indexOf("@");
+// let id = email.substring(0, p);
+// let domain = email.substring(p + 1);
 
-console.log(id);
-console.log(domain);
+// console.log(id);
+// console.log(domain);

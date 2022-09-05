@@ -25,5 +25,5 @@ for (let i=0; i<lotto.length; i++) {
     // rnd번째 위치에서 하나의 데이터를 잘라냄
     balls.splice(rnd, 1);
 }
-
+// console.log(balls);
 console.log(lotto);
