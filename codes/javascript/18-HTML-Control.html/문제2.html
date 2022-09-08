@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .default_state {
+            width: 100px;
+            height: 35px;
+            color: blue;
+        }
+        .toggle {
+            width: 100px;
+            height: 35px;
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn" class="default_state">푸시알림 수신</button>
+
+    <script>
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("click", (e) => {
+            e.currentTarget.classList.toggle("toggle");
+            e.currentTarget.classList.toggle("default_state");
+        });
+    </script>
+</body>
+</html>

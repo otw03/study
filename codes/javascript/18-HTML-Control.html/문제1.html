@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="clock"></h1>
+    <script>
+        setInterval(() => {
+            const date1 = new Date();
+
+            const yy = date1.getFullYear();
+            const mm = (date1.getMonth() + 1).toString().length < 2 ? "0" +  (date1.getMonth() + 1) : date1.getMonth() + 1;
+            const dd = date1.getDate().toString().length < 2 ? "0" + date1.getDate() : date1.getDate();
+            const hh = date1.getHours().toString().length < 2 ? "0" + date1.getHours() : date1.getHours();
+            const mi = date1.getMinutes().toString().length < 2 ? "0" + date1.getMinutes() : date1.getMinutes();
+            const ss = date1.getSeconds().toString().length < 2 ? "0" + date1.getSeconds() : date1.getSeconds();
+
+            const result = yy + '-' + mm + '-' + dd + ' ' + hh + ':' + mi + ':' + ss;
+
+            document.getElementById("clock").innerHTML = result;
+        }, 1000);
+    </script>
+</body>
+</html>
