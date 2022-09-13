@@ -26,8 +26,8 @@ console.log(y); // 200
 
 // 구조 분해를 활용하여 필요한 데이터만 추출하기
 const data = { name: "hello", age: 20, height: 172, weight: 85};
-const {name} = data;
-console.log(name);
+const {age} = data;
+console.log(age);
 
 // data안에 있는 height와 weight를 분해하면서 이름을 h와 w로 변경
 const {height: h, weight: w} = data;

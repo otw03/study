@@ -13,8 +13,8 @@ console.log(company.department[0]);     // 점으로 연결
 console.log(company.department[1]);     // 점으로 연결
 console.log(company['department'][2]);  // 배열처럼 연결
 
-// console.log("----------------------------------");
+console.log("----------------------------------");
 
-// for(let k in company) {
-//     console.log(company[k]);
-// }
+for(let k in company) {
+    console.log(company[k]);
+}

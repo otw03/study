@@ -50,5 +50,6 @@ for(const k of keys) {
 for(const k in student) {
     console.group(k);
     console.log(student[k]);
+    // console.log(student.k);
     console.groupEnd();
 }

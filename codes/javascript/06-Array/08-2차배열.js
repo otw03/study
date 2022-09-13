@@ -8,6 +8,8 @@ console.log(myArr1);
 // 2행 3열 배열 만들기
 var myArr2 = [ [1, 2, 3], [4, 5, 6] ];
 console.log(myArr2);
+var arr1 = [2][3];
+console.log(arr1);
 
 /** 3) 2차 배열의 원소 접근 */
 // 행->열 순으로 인덱스를 열거한다.
