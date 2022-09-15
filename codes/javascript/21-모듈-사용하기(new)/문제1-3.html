@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .subplot {
+            float: left;
+            width: 33.3%;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .subplot-item {
+            width: auto;
+            height: 320px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="subplot">
+        <h2>학과별 학생수</h2>
+        <div class="subplot-item">
+            <canvas id="mychart1"></canvas>
+        </div>
+    </div>
+
+    <div class="subplot">
+        <h2>학년에 따른 평균 나이 변화</h2>
+        <div class="subplot-item">
+            <canvas id="mychart2"></canvas>
+        </div>
+    </div>
+
+    <div class="subplot">
+        <h2>학년별 평균키와 평균 몸무게</h2>
+        <div class="subplot-item">
+            <canvas id="mychart3"></canvas>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../node_modules/chart.js/dist/chart.min.js"></script>
+    <script src='dataset.js'></script>
+
+
+    <!--==================== 문제1 ====================-->
+    <script >
+        // import {student} from './dataset.js'
+console.group("문제1");
+        const department = []; // 학과
+        const studentCount = []; // 학과별 학생수
+
+        // 학과 배열 채우기
+        for(let i=0; i<student.length; i++) {
+            if(!(department.includes(student[i].deptno)))
+            department.push(student[i].deptno);
+        }
+        console.log(department);
+
+        // 학과별 학생수 배열 채우기
+        for(let i=0; i<department.length; i++) {
+            let count = 0;
+            for(let j=0; j<student.length; j++) {
+                if(student[j].deptno == department[i]){
+                    count++;
+                }
+            }
+            studentCount.push(count);
+            
+        }
+        console.log(studentCount);
+
+        const mychart1 = document.getElementById('mychart1');
+
+        new Chart(mychart1, {
+            type: 'bar',
+            data: {
+                labels: department,
+                datasets: [
+                    {
+                        label: '학생수',
+                        data: studentCount,
+                        borderWidth: 0.5,
+                        borderColor: 'rgba(255,0,0,1)',
+                        backgroundColor: 'rgba(255,0,0,0.1)',
+                    },
+                ],
+            },
+            options: {
+                maintainAspectRatio: false,
+            },
+        });
+console.groupEnd();
+    </script>
+
+
+
+
+    <!--==================== 문제2 ====================-->
+    <script>
+console.group("문제2");
+        let date1 = new Date();
+        let year = date1.getFullYear(); // 현재 년도
+        // console.log(year);
+
+        // 각학년별 학생 나이 빈 배열
+        const ageInfo = {
+            // "1학년": [],
+            // "2학년": [],
+            // "3학년": [],
+            // "4학년": [],
+        };
+
+        for(let i=1; i<=4; i++) {
+            ageInfo[`${i}학년`] = [];
+        }
+        console.log(ageInfo);
+
+        // 각학년별 학생 나이 채우기
+        for(let i=0; i<student.length; i++) {
+            // 학생 나이
+            let age = year - parseInt(student[i].birthdate.slice(0,4)) + 1;
+            let grade = student[i].grade;
+
+            if(grade == 1) {
+                ageInfo[`${grade}학년`].push(age);
+            } else if(grade == 2) {
+                ageInfo[`${grade}학년`].push(age);
+            } else if(grade == 3) {
+                ageInfo[`${grade}학년`].push(age);
+            } else if(grade == 4) {
+                ageInfo[`${grade}학년`].push(age);
+            }
+        }
+        console.log(ageInfo);
+
+        // 학년 정보 배열
+        let grade = [];
+        // 학년별 평균 나이
+        let avgAge = [];
+
+        // 학년 채우기
+        for(let k in ageInfo) {
+            grade.push(k);
+            let sum = 0;
+
+            // 평균 나이 채우기
+            for(let v of ageInfo[k]) {
+                sum += v;
+            }
+            avgAge.push(sum / ageInfo[k].length);
+        }
+        console.log(grade);
+        console.log(avgAge);
+
+        const mychart2 = document.getElementById('mychart2');
+
+        new Chart(mychart2, {
+            type: 'line',
+            data: {
+                labels: grade,
+                datasets: [
+                    {
+                        label: '평균나이',
+                        data: avgAge,
+                        borderWidth: 1,
+                        borderColor: 'rgba(255,0,0,1)',
+                    },
+                ],
+            },
+            options: {
+                maintainAspectRatio: false,
+            },
+        });
+console.groupEnd();
+    </script>
+
+
+
+
+    <!--==================== 문제3 ====================-->
+    <script >
+console.group("문제3");
+        // import {student} from './dataset.js'
+
+        // 비어있는 bodyInfo 만들기
+        const bodyInfo = {};
+
+        // bodyInfo 채우기
+        for(let i=1; i<=4; i++) {
+            bodyInfo[`${i}학년`] = {};
+            bodyInfo[`${i}학년`].height = [];
+            bodyInfo[`${i}학년`].weight = [];
+        }
+        // console.log(bodyInfo);
+        // const bodyInfo = {
+        //     "4학년":{ "height":[], "weight":[] },
+
+        //     "1학년":{ "height":[], "weight":[] },
+
+        //     "3학년":{ "height":[], "weight":[] },
+
+        //     "2학년":{ "height":[], "weight":[] }
+        // };
+
+
+        // bodyInfo에 값 넣기
+        for(let i = 0; i<student.length; i++) {
+            let grade = student[i].grade;
+
+            if(grade == 1) {
+                bodyInfo[`${grade}학년`].height.push(student[i].height);
+                bodyInfo[`${grade}학년`].weight.push(student[i].weight);
+            } else if(grade == 2) {
+                bodyInfo[`${grade}학년`].height.push(student[i].height);
+                bodyInfo[`${grade}학년`].weight.push(student[i].weight);
+            } else if(grade == 3) {
+                bodyInfo[`${grade}학년`].height.push(student[i].height);
+                bodyInfo[`${grade}학년`].weight.push(student[i].weight);
+            } else if(grade == 4) {
+                bodyInfo[`${grade}학년`].height.push(student[i].height);
+                bodyInfo[`${grade}학년`].weight.push(student[i].weight);
+            }
+        }
+        // console.log(bodyInfo);
+        
+        // 학년, 평균키, 평균몸무게 배열
+        let grade2 = [];
+        let avgHeight = [];
+        let avgWeight = [];
+
+        for(let k in bodyInfo) {
+            // 학년 채우기
+            grade2.push(k);
+            // console.log(bodyInfo[k].height);
+
+            let hSum = 0;
+            let wSum = 0;
+
+            // 평균키 채우기
+            for(let h of bodyInfo[k].height) {
+                // console.log(h);
+                hSum += h;
+            }
+            avgHeight.push(hSum / bodyInfo[k].height.length)
+
+            // 평균몸무게 채우기
+            for(let w of bodyInfo[k].weight) {
+                // console.log(w);
+                wSum += w;
+            }
+            avgWeight.push(wSum / bodyInfo[k].weight.length)
+        }
+        // console.log(grade2);
+        // console.log(avgHeight);
+        // console.log(avgWeight);
+
+        const mychart3 = document.getElementById('mychart3');
+
+        new Chart(mychart3, {
+            type: 'bar',
+            data: {
+                labels: grade2,
+                datasets: [
+                    {
+                        label: '키',
+                        data: avgHeight,
+                        borderWidth: 0.5,
+                        borderColor: 'rgba(0,0,255,1)',
+                        backgroundColor: 'rgba(0,0,255,0.1)',
+                    },
+                    {
+                        label: '몸무게',
+                        data: avgWeight,
+                        borderWidth: 0.5,
+                        borderColor: 'rgba(255,0,0,1)',
+                        backgroundColor: 'rgba(255,0,0,0.1)',
+                    },
+                ],
+            },
+            options: {
+                maintainAspectRatio: false,
+            },
+        });
+console.groupEnd();
+    </script>
+</body>
+</html>

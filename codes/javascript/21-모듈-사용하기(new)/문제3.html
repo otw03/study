@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="subplot">
+        <h2>문제3 다중 막대 그래프</h2>
+        <div class="subplot-item">
+            <canvas id="mychart3"></canvas>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../node_modules/chart.js/dist/chart.min.js"></script>
+    <script src='dataset.js'></script>
+    <script >
+        // import {student} from './dataset.js'
+
+        // 비어있는 bodyInfo 만들기
+        const bodyInfo = {};
+
+        // bodyInfo 채우기
+        for(let i=1; i<=4; i++) {
+            bodyInfo[`${i}학년`] = {};
+            bodyInfo[`${i}학년`].height = [];
+            bodyInfo[`${i}학년`].weight = [];
+        }
+        // console.log(bodyInfo);
+        // const bodyInfo = {
+        //     "4학년":{ "height":[], "weight":[] },
+
+        //     "1학년":{ "height":[], "weight":[] },
+
+        //     "3학년":{ "height":[], "weight":[] },
+
+        //     "2학년":{ "height":[], "weight":[] }
+        // };
+
+
+        // bodyInfo에 값 넣기
+        for(let i = 0; i<student.length; i++) {
+            let grade = student[i].grade;
+
+            if(grade == 1) {
+                bodyInfo[`${grade}학년`].height.push(student[i].height);
+                bodyInfo[`${grade}학년`].weight.push(student[i].weight);
+            } else if(grade == 2) {
+                bodyInfo[`${grade}학년`].height.push(student[i].height);
+                bodyInfo[`${grade}학년`].weight.push(student[i].weight);
+            } else if(grade == 3) {
+                bodyInfo[`${grade}학년`].height.push(student[i].height);
+                bodyInfo[`${grade}학년`].weight.push(student[i].weight);
+            } else if(grade == 4) {
+                bodyInfo[`${grade}학년`].height.push(student[i].height);
+                bodyInfo[`${grade}학년`].weight.push(student[i].weight);
+            }
+        }
+        // console.log(bodyInfo);
+        
+        // 학년, 평균키, 평균몸무게 배열
+        let grade2 = [];
+        let avgHeight = [];
+        let avgWeight = [];
+
+        for(let k in bodyInfo) {
+            // 학년 채우기
+            grade2.push(k);
+            // console.log(bodyInfo[k].height);
+
+            let hSum = 0;
+            let wSum = 0;
+
+            // 평균키 채우기
+            for(let h of bodyInfo[k].height) {
+                // console.log(h);
+                hSum += h;
+            }
+            avgHeight.push(hSum / bodyInfo[k].height.length)
+
+            // 평균몸무게 채우기
+            for(let w of bodyInfo[k].weight) {
+                // console.log(w);
+                wSum += w;
+            }
+            avgWeight.push(wSum / bodyInfo[k].weight.length)
+        }
+        // console.log(grade2);
+        // console.log(avgHeight);
+        // console.log(avgWeight);
+
+        const mychart3 = document.getElementById('mychart3');
+
+        new Chart(mychart3, {
+            type: 'bar',
+            data: {
+                labels: grade2,
+                datasets: [
+                    {
+                        label: '키',
+                        data: avgHeight,
+                        borderWidth: 0.5,
+                        borderColor: 'rgba(0,0,255,1)',
+                        backgroundColor: 'rgba(0,0,255,0.1)',
+                    },
+                    {
+                        label: '몸무게',
+                        data: avgWeight,
+                        borderWidth: 0.5,
+                        borderColor: 'rgba(255,0,0,1)',
+                        backgroundColor: 'rgba(255,0,0,0.1)',
+                    },
+                ],
+            },
+            options: {
+                maintainAspectRatio: true,
+            },
+        });
+    </script>
+</body>
+</html>

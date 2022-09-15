@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="subplot">
+        <h2>문제2 선 그래프</h2>
+        <div class="subplot-item">
+            <canvas id="mychart2"></canvas>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../node_modules/chart.js/dist/chart.min.js"></script>
+    <script src='dataset.js'></script>
+    <script type="module">
+        let date1 = new Date();
+        let year = date1.getFullYear(); // 현재 년도
+        // console.log(year);
+
+        // 각학년별 학생 나이 빈 배열
+        const ageInfo = {
+            // "1학년": [],
+            // "2학년": [],
+            // "3학년": [],
+            // "4학년": [],
+        };
+
+        for(let i=1; i<=4; i++) {
+            ageInfo[`${i}학년`] = [];
+        }
+        // console.log(ageInfo);
+
+        // 각학년별 학생 나이 채우기
+        for(let i=0; i<student.length; i++) {
+            // 학생 나이
+            let age = year - parseInt(student[i].birthdate.slice(0,4)) + 1;
+            let grade = student[i].grade;
+
+            if(grade == 1) {
+                ageInfo[`${grade}학년`].push(age);
+            } else if(grade == 2) {
+                ageInfo[`${grade}학년`].push(age);
+            } else if(grade == 3) {
+                ageInfo[`${grade}학년`].push(age);
+            } else if(grade == 4) {
+                ageInfo[`${grade}학년`].push(age);
+            }
+        }
+        // console.log(ageInfo);
+
+        // 학년 정보 배열
+        let grade = [];
+        // 학년별 평균 나이
+        let avgAge = [];
+
+        // 학년 채우기
+        for(let k in ageInfo) {
+            grade.push(k);
+            let sum = 0;
+
+            // 평균 나이 채우기
+            for(let v of ageInfo[k]) {
+                sum += v;
+            }
+            avgAge.push(sum / ageInfo[k].length);
+        }
+        // console.log(grade);
+        // console.log(avgAge);
+
+        const mychart2 = document.getElementById('mychart2');
+
+        new Chart(mychart2, {
+            type: 'line',
+            data: {
+                labels: grade,
+                datasets: [
+                    {
+                        label: '평균나이',
+                        data: avgAge,
+                        borderWidth: 1,
+                        borderColor: 'rgba(255,0,0,1)',
+                    },
+                ],
+            },
+            options: {
+                maintainAspectRatio: true,
+            },
+        });
+    </script>
+</body>
+</html>
