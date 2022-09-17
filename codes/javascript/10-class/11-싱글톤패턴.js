@@ -26,10 +26,10 @@ class Calc {
     }
 }
 
-c1 = Calc.getInstance();
+let c1 = Calc.getInstance();
 console.log(c1.plus(10, 20));
 
-c2 = Calc.getInstance();
+let c2 = Calc.getInstance();
 console.log(c2.minus(10, 20));
 
 console.log(Calc.getInstance().times(10, 20));
