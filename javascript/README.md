@@ -7,3 +7,4 @@
 [07-JSON](documents/07-JSON.md)  
 [08-함수](documents/08-function.md)  
 [09-프로토타입](documents/09-Prototype.md)  
+[10-클래스](documents/10-Class.md)  
