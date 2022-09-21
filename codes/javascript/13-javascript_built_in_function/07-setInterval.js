@@ -31,7 +31,7 @@ const timerId2 = setInterval(() => {
     count2++;
     console.log("[타이머2] " + count2 + "번째 자동 실행");
 
-    if(count1 == 5) {
+    if(count2 == 15) {
         console.log("타이머2 종료");
         clearInterval(timerId2);
     }

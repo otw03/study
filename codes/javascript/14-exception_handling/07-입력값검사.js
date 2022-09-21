@@ -2,7 +2,7 @@ import RegexHelper from './helper/RegexHelper.js';
 
 // 회원가입시 입력받은 값을 가정한 변수
 // 사용자가 입력한 모든 내용은 문자열 변수이다.
-const username = "자바스크립트";
+const username = "자바스크립트1";
 const age = '20';
 const userid = 'js123';
 

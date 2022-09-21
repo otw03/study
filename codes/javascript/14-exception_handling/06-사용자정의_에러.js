@@ -11,7 +11,7 @@ class XlessError extends Error {
     }
 }
 
-class ylessError extends Error {
+class YlessError extends Error {
     // 자식 클래스가 생성자를 갖을 경우 부모의 생성자를 반드시 강제호출해야 한다. --> super(...)
     constructor(msg) {
         super(msg);
