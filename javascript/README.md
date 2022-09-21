@@ -9,3 +9,4 @@
 [09-프로토타입](documents/09-Prototype.md)  
 [10-클래스](documents/10-Class.md)  
 [12-자바스크립트 내장기능(내장함수)](documents/12-javascript_built_in_function.md)  
+[13-예외처리](documents/13-exception_handling.md)  
