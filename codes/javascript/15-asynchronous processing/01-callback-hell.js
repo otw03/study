@@ -20,8 +20,30 @@ setTimeout(() => {
 
     const lucky = random(1, 9);
     setTimeout(() => {
-        console.log(lucky % 2 == 0 ? "당첨입니다~!!" : "꽝!!!");
+        console.log(lucky % 2 == 0 ? `${lucky}: 당첨입니다~!!` : `${lucky}: 꽝!!!`);
     }, 3000);
 }, 1000);
 
 console.log("추첨중~~~");
+
+
+
+
+
+
+// console.log(`1`);
+// setTimeout(() => console.log(`2`), 1000);
+// console.log(`3`);
+
+// // Synchronous(동기식) callback
+// function printImmediately(print) {
+//   print();
+// }
+// printImmediately(() => console.log(`hello`));
+
+// // Asynchronous(비동기식) callback
+// function printWithDelay(print, timeout) {
+//   setTimeout(print, timeout);
+// }
+
+// printWithDelay(() => console.log(`async callback`), 2000);
