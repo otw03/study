@@ -1,4 +1,7 @@
 # 16-이벤트 처리
+[01. 이벤트란?](#01-이벤트란)  
+[02. 이벤트를 처리하는 방법](#02-이벤트를-처리하는-방법)  
+[03. 자주 쓰는 이벤트](#03-자주-쓰는-이벤트)  
 
 # 01. 이벤트란?
 
@@ -32,4 +35,50 @@ HTML과 JS코드를 분리하는 경향이 생기면서 요즘엔 거의 사용�
 ```html
 <태그이름 on이벤트이름="...JS코드영역..."></태그이름>
 ```
+# 03. 자주 쓰는 이벤트
 
+`이벤트` | `이벤트 핸들러` 설명  
+
+### 01-ClickEvent
+
+- `click` | `OnClick` : 대상을 클릭했을 경우
+- `dblclick` | `OnDblClick` : 대상을 더블클릭했을 경우
+
+### 02-MouseEvent
+
+- `mousedown` | `OnMouseDown` : 마우스 버튼을 누르고 있는 동안
+- `mouseup` | `OnMouseUp` : 마우스 버튼을 누르고 있다가 땐 경우
+- `mousemove` | `OnMouseMove` : 마우스를 움직였을 경우
+- `mouseout` | `OnMouseOut` : 대상에서 마우스 포인터가 벗어났을 경우
+- `mouseover` | `OnMouseOver` : 대상에 마우스 포인터가 위치했을 경우
+- `dragdrop` | `OnDragDrop` : 대상을 클릭한 상태에서 이동했을 경우
+
+### 03-KeyEvent
+
+- `keydown` | `OnKeyDown` : 키가 눌러져 있는 동안 반복 실행된다.
+    - `keydown`의 경우 키를 눌렀다 떼는 행동을 느리게 하는 사람의 경우 다운 명령이 계속 들어오기 때문에 키 업(`keyup`)을 기준으로 하는 게 편하다
+- `keyup` | `OnKeyUp` : 키를 눌렀다가 놓았을 경우
+
+### 04-KeyPress
+
+- `keyprss` | `OnKeyPress` : 화면에 출력되는 키가 눌러질 경우 (한글동작안함)
+
+### 05-KeyCode
+
+- `keyCode` : 키보드의 각 버튼에 할당된 일련번호. 어떤 버튼이 눌렸는지 감지할 수 있다.
+
+### 06-scroll
+
+- `scroll` : 스크롤은 대부분 브라우저 레벨에서 수행되므로 window객체에 대해서 이벤트를 정의해야 한다.
+
+### 07-resize(브라우저)
+
+- `resize` | `OnResize` : 윈도우나 프레임의 크기가 변경했을 경우
+
+### 08-브라우저 관련 추가 내용
+
+- `abort` | `OnAbort` : 이미지를 읽다가 중단했을 경우
+- `error` | `OnError` : 에러가 발생했을 경우
+- `load` | `OnLoad` : 대상을 열었을 경우 (주로 페이지 로딩 직후를 의미)
+- `move` | `OnMove` : 윈도우나 프레임을 움직였을 경우
+- `unload` | `OnUnload` : 대상을 종료했을 경우
