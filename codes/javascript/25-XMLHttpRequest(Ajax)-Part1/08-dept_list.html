@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #loading {
+            width: 100px;
+            height: 100px;
+            background: url(img/loading.gif) no-repeat center/cover;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 99999;
+            display: none;
+        }
+
+        #loading.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading"></div>
+    <h1>Dept Item</h1>
+
+    <button id="btn" type="button">데이터 가져오기</button>
+
+    <hr />
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>학과번호</th>
+                <th>학과명</th>
+                <th>학과위치</th>
+            </tr>
+        </thead>
+        <tbody id="list-body"></tbody>
+    </table>
+
+    <script type="module">
+        import ajaxHelper from '../helper/AjaxHelper.js';
+
+        let page = 1;
+
+        document.querySelector('#btn').addEventListener('click', async (e) => {
+            e.preventDefault();
+            // 로딩바 표시하기
+            const loading = document.querySelector('#loading');
+            loading.classList.add('active');
+
+            // Ajax 응답 결과를 저장할 JSON
+            let json = null;
+            try{
+                json = await ajaxHelper.requestAsync('http://localhost:3001/department');
+                console.log(json);
+            } catch(e) {
+                console.error(e);
+                alert(`[${e.status}] ${e.text}\n${e.msg}`);
+                return; // 에러가 났을 때 종료하기 위함(아래 내용 실행x)
+            } finally {
+                // 로딩바 닫기
+                loading.classList.remove('active');
+            }
+
+            const listBody = document.querySelector('#list-body');
+            //console.log(listBody);
+            json.forEach((v, i) => {
+                //console.log(v);
+                const tr = document.createElement('tr');
+
+                const td1 = document.createElement('td');
+                td1.innerHTML = v.id;
+
+                const td2 = document.createElement('td');
+                td2.innerHTML = v.dname;
+
+                const td3 = document.createElement('td');
+                td3.innerHTML = v.loc;
+
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+
+                listBody.appendChild(tr);
+            });
+
+            // 백엔드로부터 수신한 데이터를 history객체에 백업하기 위한 준비
+            // --> 수신한 json 객체를 문자열로 변환한다.
+            const state = {'html': listBody.innerHTML};
+            const url = '08-dept_list.html?deptno=' + ++page;
+
+            // 웹 브라우저의 페이지 이동 히스토리에 가상의 주소를 추가한다.
+            // --> 현재 페이지의 주소를 강제로 변경하는 것과 동일한 처리
+            history.pushState(state, null, url);
+        });
+
+        /** history가 이전 페이지로 되돌아 갈 때 발생하는 이벤트 */
+        window.addEventListener("popstate", e => {
+            document.querySelector('#list-body').innerHTML = e.state?.html || ''; // e.state?.html 는 옵셔널 체이닝
+        });
+    </script>
+</body>
+</html>

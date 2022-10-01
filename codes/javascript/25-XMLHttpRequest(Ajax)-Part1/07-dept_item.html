@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #loading {
+            width: 100px;
+            height: 100px;
+            background: url(img/loading.gif) no-repeat center/cover;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 99999;
+            display: none;
+        }
+
+        #loading.active {
+            display: block;
+        }
+
+        dt {
+            font-weight: bold;
+            margin: 10px 0px;
+            font-size: 20px;
+        }
+
+        dt:before {
+            content: '★';
+            padding-right: 5px;
+        }
+
+        dd {
+            font-weight: normal;
+            margin-bottom: 30px;
+            border-left: 5px solid #d5d5d5;
+            padding-left: 15px;
+            font-size: 16px;
+        }
+
+        #container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading"></div>
+    <h1>Dept Item</h1>
+
+    <a href="#" class="mylink" data-deptno="101">컴퓨터공학과</a>
+    <a href="#" class="mylink" data-deptno="102">멀티미디어학과</a>
+    <a href="#" class="mylink" data-deptno="201">전자공학과</a>
+    <a href="#" class="mylink" data-deptno="202">기계공학과</a>
+
+    <dl id="container">
+        <dt>학과번호</dt>
+        <dd class="id"></dd>
+        <dt>학과명</dt>
+        <dd class="dname"></dd>
+        <dt>학과위치</dt>
+        <dd class="loc"></dd>
+    </dl>
+
+    <script type="module">
+        import ajaxHelper from '../helper/AjaxHelper.js';
+
+        const mylink = document.querySelectorAll('.mylink');
+        const container = document.querySelector('#container');
+
+        mylink.forEach((v, i) => {
+            v.addEventListener('click', async (e) => {
+                e.preventDefault();
+
+                // 로딩바 표시하기
+                const loading = document.querySelector('#loading');
+                loading.classList.add('active');
+
+                // 링크에 숨겨진 data-deptno의 값을 가져옴
+                const deptno = e.currentTarget.dataset.deptno;
+                console.log(deptno);
+
+                let json = null;
+                try{
+                    const url = 'http://localhost:3001/department/' + deptno;
+                    json = await ajaxHelper.requestAsync(url);
+                } catch(e) {
+                    console.error(e);
+                    alert(`[${e.status}] ${e.text}\n${e.msg}`);
+                    return; // 에러가 났을 때 종료하기 위함(아래 내용 실행x)
+                } finally {
+                    // 로딩바 닫기
+                    loading.classList.remove('active');
+                }
+
+                // 백엔드로부터 수신한 데이터를 화면에 출력
+                container.querySelector('.id').innerHTML = json.id;
+                container.querySelector('.dname').innerHTML = json.dname;
+                container.querySelector('.loc').innerHTML = json.loc;
+                container.style.display = 'block';
+
+                // 백엔드로부터 수신한 데이터를 history객체에 백업하기 위한 준비
+                // --> 수신한 json 객체를 문자열로 변환한다.
+                const state = {data: JSON.stringify(json)};
+                const url = '07-dept_item.html?deptno=' + deptno;
+
+                // 웹 브라우저의 페이지 이동 히스토리에 가상의 주소를 추가한다.
+                // --> 현재 페이지의 주소를 강제로 변경하느 것과 동일한 처리
+                history.pushState(state, null, url);
+            });
+        });
+
+        /** history가 이전 페이지로 되돌아 갈 때 발생하는 이벤트 */
+        window.addEventListener("popstate", e => {
+            if(e.state) {
+                /** 백업데이터가 있다면? */
+                // 백업한 데이터를 추출하여 JSON객체로 되돌림
+                const json = JSON.parse(e.state.data);
+                // 추출한 데이터를 화면에 출력하여 이전화면의 내용 복원하기
+                container.querySelector('.id').innerHTML = json.id || '';
+                container.querySelector('.dname').innerHTML = json.dname || '';
+                container.querySelector('.loc').innerHTML = json.loc || '';
+            } else {
+                /** 백업 데이터가 없다면? */
+                // 최초로 화면이 열렸을 때를 의미하므로 출력 부분을 화면에서 숨김
+                container.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
