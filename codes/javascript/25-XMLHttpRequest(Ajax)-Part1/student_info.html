@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>stduent_info</h1>
+    <div></div>
+
+    <script type="module">
+        import ajaxHelper from '../helper/AjaxHelper.js';
+
+        const URL = 'http://localhost:3001/student';
+
+        /** 생성된 객체를 JSON으로 변환 */
+        console.log(location.search); // ?id=10101
+        const query = new URLSearchParams(location.search);
+        console.log(query);
+        const params = Object.fromEntries(query);
+        console.log(params);          // {id: '10101'}
+        console.log(params.id);       // 10101
+
+        // const params = utilHelper.getUrlParams();
+
+        //즉시 실행 함수
+        (async () => {            
+            let json = null;    // json위치는 try문 밖이기만 하면 된다.
+
+            try{
+                json = await ajaxHelper.requestAsync(`${URL}/${params.id}`);
+                console.log(json);
+            } catch(e) {
+                console.error(e);
+                alert(`[${e.status}] ${e.text}\n${e.msg}`);
+                return; // 에러가 났을 때 종료하기 위함
+            }
+
+            for(let i in json) {
+                console.log(json[i]);
+                const p = document.createElement('p');
+                p.innerHTML = `${i}: ${json[i]}`;
+                document.querySelector('div').appendChild(p);                
+            }
+        })();
+    </script>
+</body>
+</html>

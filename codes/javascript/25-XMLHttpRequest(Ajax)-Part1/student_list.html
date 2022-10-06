@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="loading"></div>
+    <h1>student_list</h1>
+    
+    <hr />
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>학생번호</th>
+                <th>이름</th>
+                <th>학년</th>
+                <th>연락처</th>
+            </tr>
+        </thead>
+        <tbody id="list-body"></tbody>
+    </table>
+    
+    <script type="module">
+        import ajaxHelper from '../helper/AjaxHelper.js';
+        //즉시 실행 함수
+        (async () => {            
+            let json = null;    // json위치는 try문 밖이기만 하면 된다.
+
+            try{
+                json = await ajaxHelper.requestAsync('http://localhost:3001/student');
+                console.log(json);
+            } catch(e) {
+                console.error(e);
+                alert(`[${e.status}] ${e.text}\n${e.msg}`);
+                return; // 에러가 났을 때 종료하기 위함
+            }
+
+            const listBody = document.querySelector('#list-body');
+            console.log(listBody);
+
+            json.forEach((v, i) => {
+                // console.log(v);
+                const tr = document.createElement('tr');
+
+                const td1 = document.createElement('td');
+                td1.innerHTML = v.id;
+                
+                const td2 = document.createElement('td');
+
+                const a = document.createElement('a');
+                td2.appendChild(a);
+                // <td><a></a></td>
+                a.innerHTML = v.name;
+                a.setAttribute('href', `student_info.html?id=${v.id}`);
+                // <td><a href="stduent_info.html?id=">이름</a></td>
+
+                const td3 = document.createElement('td');
+                td3.innerHTML = v.grade;
+
+                const td4 = document.createElement('td');
+                td4.innerHTML = v.tel;
+
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.appendChild(td4);
+
+                listBody.appendChild(tr);
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -31,11 +31,11 @@
             });
         });
 
-        document.querySelectorAll("*[data-color]").forEach((v, i) => {
+        document.querySelectorAll("button[data-color]").forEach((v, i) => {
             v.style.color = v.dataset.color;
         });
 
-        document.querySelectorAll("*[data-background]").forEach((v, i) => {
+        document.querySelectorAll("button[data-background]").forEach((v, i) => {
             v.style.backgroundColor = v.dataset.background;
         });
     </script>
