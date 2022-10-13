@@ -17,3 +17,4 @@
 [18-HTML-탐색하기](documents/18-HTML-%ED%83%90%EC%83%89.md)  
 [19-HTML-생성하기](documents/19-HTML-%EC%83%9D%EC%84%B1.md)  
 [21-HTML-Form](documents/21-HTML-Form.md)  
+[22-브라우저-관련-기능](documents/22-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EA%B4%80%EB%A0%A8-%EA%B8%B0%EB%8A%A5.md)  
