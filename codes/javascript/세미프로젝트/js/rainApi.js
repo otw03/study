@@ -2,7 +2,7 @@
 async function rainApi(area) {
     // 5days weather data url
     let days_url = 'http://api.openweathermap.org/data/2.5/forecast'
-    let params = '?appid=20b3deb0c35f2fd8ef4c290a3832aad4&lang=kr&units=metric';
+    let params = '?appid=서비스키&lang=kr&units=metric';
     
     // ajax 결과가 저장될 json
     let json2 = null;
