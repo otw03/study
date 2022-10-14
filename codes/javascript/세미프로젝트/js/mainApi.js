@@ -2,7 +2,7 @@
 async function mainApi(city) {
     // Current weather data url
     let current_url = 'https://api.openweathermap.org/data/2.5/weather';
-    let params = '?appid=20b3deb0c35f2fd8ef4c290a3832aad4&lang=kr&units=metric';
+    let params = '서비스키&lang=kr&units=metric';
     
     // ajax 결과가 저장될 json
     let json = null;
