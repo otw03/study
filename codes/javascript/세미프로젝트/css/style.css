@@ -107,7 +107,7 @@ body {font-family: 'Jua', sans-serif;}
     float: left;
 }
 #sky {
-    line-height: 0.1em;
+    line-height: 1em;
     width: 20%;
     height: 23%;
     margin: 10px auto 20px;
