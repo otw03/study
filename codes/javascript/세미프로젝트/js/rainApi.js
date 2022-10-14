@@ -1,4 +1,4 @@
-/** 5일예보 3시간단위 api호출하는 함수 rainApi() */
+/** 5일예보 3시간단위 api호출하는 함수 rainApi() */ 
 async function rainApi(area) {
     // 5days weather data url
     let days_url = 'http://api.openweathermap.org/data/2.5/forecast'

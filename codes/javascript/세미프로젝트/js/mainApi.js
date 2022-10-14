@@ -1,4 +1,4 @@
-/** 실시간 날씨 api호출하는 함수 mainApi() */
+/** 실시간 날씨 api호출하는 함수 mainApi() */ 
 async function mainApi(city) {
     // Current weather data url
     let current_url = 'https://api.openweathermap.org/data/2.5/weather';
@@ -22,3 +22,7 @@ async function mainApi(city) {
         loading.classList.remove('active');
     }
 }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
