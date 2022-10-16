@@ -98,9 +98,13 @@
     <script src="./js/areaList.js"></script>
     <script src="./js/mainApi.js"></script>
     <script src="./js/rainApi.js"></script>
+    <script src="./js/forecastApi.js"></script>
     <script src="./js/mainPage.js"></script>
+    <script src="./js/mainMap.js"></script>
+    <script src="./js/minTemp.js"></script>
+    <script src="./js/maxTemp.js"></script>
     <script>
-        /** 메인페이지 즉시실행 함수 */
+        /** 메인페이지 즉시실행 함수 */ 
         // 페이지가 실행되면서 자동으로 동작해야 하므로 즉시실행함수형태로 구현.
         (async () => {
             // 로딩바 객체
@@ -108,12 +112,13 @@
 
             // 로딩바 화면에 표시하기
             loading.classList.add('active');
-            
+
             // 도시(지역) 모음 areaList 만큼 반복
             for(let key in areaList) {
-                const weather = await mainApi(areaList[key]);
-                const weather2 = await rainApi(areaList[key]);
-                mainPage(areaList[key], weather, key, weather2);
+                const weather = await mainApi(areaList[key][0]);
+                const weather2 = await rainApi(areaList[key][0]);
+                const weather3 = await forecastApi(areaList[key][1]);
+                mainPage(areaList[key][0], weather, key, weather2, weather3);
             }
         })();
     </script>
