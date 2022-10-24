@@ -1,0 +1,27 @@
+// 반응형웹을 위한 미디어쿼리 구간 정의
+$breakpoint-mobile: 335px;
+$breakpoint-tablet: 758px;
+$breakpoint-desktop: 1024px;
+
+// 스마트폰을 위한 미디어쿼리
+@mixin mobile {
+    @media (max-width: #{$breakpoint-tablet - 1px}) {
+    // #{}는 숫자를 문자로 변환해준다. 또한 &는 부모를 선택하게 하는 선택자이다.  
+        @content;
+        // @mixin 안에 @content; 라는 문법을 작성해놓으면 @include할 때 필요한 css를 바로바로 적용해 넣을 수 있다.
+    }
+}
+
+// 태블릿을 위한 미디어쿼리
+@mixin tablet {
+    @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px} ) {
+        @content;
+    }
+}
+
+// 일반 컴퓨터를 위한 미디어쿼리
+@mixin desktop {
+    @media (min-width: #{$breakpoint-desktop}) {
+        @content;
+    }
+}
