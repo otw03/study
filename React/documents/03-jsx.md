@@ -1,8 +1,36 @@
 # 03-jsx
 
-# 기본 표현식
+JSX(JavaScript XML)는 Javascript에 XML을 추가한 확장한 문법이다.  
 
-### 기본 변수 출력하기 - 간단한 사칙연산 가능
+JSX는 하나의 파일에 자바스크립트와 HTML을 동시에 작성하여 편리하다.  
+
+# 0**1. 반드시 부모 요소 하나가 감싸는 형태여야 한다.**
+
+- 에러 예시
+
+```jsx
+function App() {
+	return (
+		<div>Hello</div>
+		<div>GodDaeHee!</div>
+	);
+}
+```
+
+- 정상 코드
+
+```jsx
+function App() {
+	return (
+		<div>
+			<div>Hello</div>
+			<div>GodDaeHee!</div>
+		</div>
+	);
+}
+```
+
+# 02. JSX에서의 자바스크립트 기본 표현식
 
 JSX 내부에 자바스크립트 변수를 보여줘야 할 때에는 `{}`
  으로 감싸야 한다.  
