@@ -9,7 +9,7 @@ const ScssModule = () => {
             <h2>ScssModule</h2>
 
             <div className={myScssMod.myScss}>
-                <div className={[myScssMod.myScssBox, myScssMod.red].join(' ')} />
+                <div className={[myScssMod.myScssBox, myScssMod.red].join(' ')} />  {/* <div className = 'myScssMod.myScssBox myScssMod.red' /> */}
                 <div className={[myScssMod.myScssBox, myScssMod.green].join(' ')} />
                 <div className={[myScssMod.myScssBox, myScssMod.blue].join(' ')} />
                 <div className={[myScssMod.myScssBox, myScssMod.orange].join(' ')} />
