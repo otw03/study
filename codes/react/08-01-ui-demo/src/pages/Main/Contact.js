@@ -1,6 +1,6 @@
 /**
  * @filename: Contact.js
- * @description: 왼쪽 사이드바 공통 컴포넌드
+ * @description: 메인 Contact 컴포넌트
  * @author: 
  */
 
@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import mq from '../../MediaQuery';
 import img01 from '../../img/map.jpg'
 
-/** 왼쪽 사이드바 컴포넌트 스타일 정의*/
+/** 메인 Contact 컴포넌트 스타일 정의*/
 const ContactContainer = styled.div`
     padding-top: 10px;
 

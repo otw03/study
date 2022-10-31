@@ -1,6 +1,6 @@
 /**
  * @filename: Menu.js
- * @description: 왼쪽 사이드바 공통 컴포넌드
+ * @description: 메인 메뉴 컴포넌트
  * @author: 
  */
 
@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import table2 from '../../img/tablesetting2.jpg';
 import mq from '../../MediaQuery';
 
-/** 왼쪽 사이드바 컴포넌트 스타일 정의*/
+/** 메인 메뉴 컴포넌트 스타일 정의*/
 const MenuContainer = styled.div`
     display: flex;
     line-height: 1.5;

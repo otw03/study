@@ -1,6 +1,6 @@
 /**
- * @filename: Menu.js
- * @description: 왼쪽 사이드바 공통 컴포넌드
+ * @filename: About.js
+ * @description: 메인 About 컴포넌트
  * @author: 
  */
 
@@ -21,7 +21,7 @@ const teamImgList = [
     {img: img04, title: 'Dan Star', position: 'Architect'},
 ]
 
-/** 왼쪽 사이드바 컴포넌트 스타일 정의*/
+/** 메인 About 컴포넌트 스타일 정의*/
 const MenuContainer = styled.div`
     padding-top: 10px;
 

@@ -1,6 +1,6 @@
 /**
- * @filename: About.js
- * @description: 왼쪽 사이드바 공통 컴포넌드
+ * @filename: Projects.js
+ * @description: 메인 Projects 컴포넌트
  * @author: 
  */
 
@@ -28,7 +28,7 @@ const projectImgList = [
     {img: img08, title: 'Barn House'},
 ]
 
-/** 왼쪽 사이드바 컴포넌트 스타일 정의*/
+/** 메인 Projects 컴포넌트 스타일 정의*/
 const AboutContainer = styled.div`
     padding-top: 10px;
     h3 {

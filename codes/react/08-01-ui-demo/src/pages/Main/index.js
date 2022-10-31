@@ -1,6 +1,6 @@
 /**
- * @filename: Side.js
- * @description: 왼쪽 사이드바 공통 컴포넌드
+ * @filename: index.js
+ * @description: 메인 영역 컴포넌트
  * @author: 
  */
 

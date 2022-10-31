@@ -1,6 +1,6 @@
 /**
  * @filename: Jumbotron.js
- * @description: 왼쪽 사이드바 공통 컴포넌드
+ * @description: 상단 이미지 컴포넌트
  * @author: 
  */
 
@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import architect from '../../img/architect.jpg';
 import mq from '../../MediaQuery';
 
-/** 왼쪽 사이드바 컴포넌트 스타일 정의*/
+/** 상단 이미지 컴포넌트 스타일 정의*/
 const JumbotronContainer = styled.div`
     /* width: 100%; */
     position: relative;

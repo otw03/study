@@ -1,6 +1,6 @@
 /**
  * @filename: Contact.js
- * @description: 왼쪽 사이드바 공통 컴포넌드
+ * @description: 메인 Contact 컴포넌트
  * @author: 
  */
 
@@ -9,7 +9,7 @@ import React from 'react';
 import styled from 'styled-components';
 import mq from '../../MediaQuery';
 
-/** 왼쪽 사이드바 컴포넌트 스타일 정의*/
+/** 메인 Contact 컴포넌트 스타일 정의*/
 const ContactContainer = styled.div`
     line-height: 1.5;
     padding: 80px 20px;
