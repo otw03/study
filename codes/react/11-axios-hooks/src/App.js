@@ -14,6 +14,7 @@ import MenuLink from './components/MenuLink';
 import News from './pages/News';
 import Department from './pages/Department';
 import Professor from './pages/Professor';
+import Titanic from './pages/Titanic';
 
 /**
  * 기본 레이아웃 구성 함수
@@ -22,12 +23,13 @@ import Professor from './pages/Professor';
 const App = memo(() => {
     return (
         <div>
-            <h1>10-Simple-Ajax</h1>
+            <h1>11-axios-hooks</h1>
 
             <nav>
                 <MenuLink to='/news'>News</MenuLink>
                 <MenuLink to='/department'>Department</MenuLink>
                 <MenuLink to='/professor'>교수관리</MenuLink>
+                <MenuLink to='/titanic'>Titanic</MenuLink>
             </nav>
 
             <hr />
@@ -36,6 +38,7 @@ const App = memo(() => {
                 <Route path='/news' element={<News />} />
                 <Route path='/department' element={<Department />} />
                 <Route path='/professor' element={<Professor />} />
+                <Route path='/titanic' element={<Titanic />} />
             </Routes>
         </div>
     );
