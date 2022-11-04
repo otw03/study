@@ -11,10 +11,8 @@ import { Routes, Route } from "react-router-dom";
 
 import MenuLink from './components/MenuLink';
 
-import News from './pages/News';
-import Department from './pages/Department';
-import Professor from './pages/Professor';
 import Titanic from './pages/Titanic';
+import Exam11 from './pages/Exam11';
 
 /**
  * 기본 레이아웃 구성 함수
@@ -23,22 +21,17 @@ import Titanic from './pages/Titanic';
 const App = memo(() => {
     return (
         <div>
-            <h1>11-axios-hooks</h1>
-
+            <h1>11-axios-hooks</h1>              
             <nav>
-                <MenuLink to='/news'>News</MenuLink>
-                <MenuLink to='/department'>Department</MenuLink>
-                <MenuLink to='/professor'>교수관리</MenuLink>
                 <MenuLink to='/titanic'>Titanic</MenuLink>
+                <MenuLink to='/exam11'>Exam11</MenuLink>
             </nav>
 
             <hr />
 
             <Routes>
-                <Route path='/news' element={<News />} />
-                <Route path='/department' element={<Department />} />
-                <Route path='/professor' element={<Professor />} />
                 <Route path='/titanic' element={<Titanic />} />
+                <Route path='/exam11' element={<Exam11 />} />
             </Routes>
         </div>
     );
