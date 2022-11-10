@@ -4,4 +4,6 @@
 [04-props](documents/04-props.md)  
 [05-stylesheet](documents/05-stylesheet.md)  
 [06-hook-event](documents/06-hook-event.md)  
-[Dayjs](documents/Dayjs.md)  
+[07-performance-optimization](documents/07-performance-optimization.md)  
+  
+[참고) Dayjs](documents/Dayjs.md)  
