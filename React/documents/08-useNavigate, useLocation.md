@@ -1,6 +1,11 @@
-# 09-****useNavigate() 파라미터 전달, useLocation() 파라미터 수신****
+# 08-파라미터 전달, 수신
+### 사용방법
+`yarn add react-router-dom` 명령어를 통해 react router dom 설치
 
-## navigate(: useNavigate())
+# navigate(: useNavigate())
+`import { useNavigate } from 'react-router-dom';` 를 통해 import 한다.
+
+useNavigate는 양식이 제출되거나 특정 event가 발생할 때,  url을 조작할 수 있는 interface를 제공한다.  
 
 history.push 와 비슷한 기능 : 브라우저의 url을 조작해준다  
 ⇒ url 변경 ⇒ 모든 컴포넌트 재실행  
@@ -8,7 +13,7 @@ history.push 와 비슷한 기능 : 브라우저의 url을 조작해준다
 리액트는 App.js 부터 모든 컴포넌트가 전부 재실행된다  
 ⇒ 재실행되는 과정의 url의 키워드를 넘겨줌  
 
-### **History**
+### History
 
 **History**란 세션 기록(페이지 방문 기록)에 대한 접근 방법과 메서드를 제공하는 것입니다.  
 
@@ -16,7 +21,18 @@ history.push 와 비슷한 기능 : 브라우저의 url을 조작해준다
 
 간단하게는 뒤로가기 앞으로가기 기능  
 
-추가 내용: [https://basemenks.tistory.com/269](https://basemenks.tistory.com/269)  
+### 세션이란?
+
+웹 사이트의 여러 페이지에 걸쳐 사용되는 사용자 정보를 저장하는 방법  
+
+사용자가 브라우저를 닫아 서버와의 연결을 끝내는 시점까지를 세션이라고 한다.  
+
+세션은 서비스가 돌아가는 서버 측에 데이터를 저장하고, 세션의 키값만을 클라이언트 측에 남겨둔다.
+
+브라우저는 필요할 때마다 이 키값을 이용하여 서버에 저장된 데이터를 사용한다.
+
+# useLocation
+`import { useLocation } from 'react-router-dom';` 를 통해 import 한다.
 
 **QueryString으로 전달되는 검색 키워드를 받는다**  
 
