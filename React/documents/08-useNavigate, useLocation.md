@@ -1,8 +1,8 @@
-# 08-파라미터 전달, 수신
+# 08-url 쿼리 다루기
 ### 사용방법
 `yarn add react-router-dom` 명령어를 통해 react router dom 설치
 
-# navigate(: useNavigate())
+# useNavigate()
 `import { useNavigate } from 'react-router-dom';` 를 통해 import 한다.
 
 useNavigate는 양식이 제출되거나 특정 event가 발생할 때,  url을 조작할 수 있는 interface를 제공한다.  
@@ -32,19 +32,30 @@ history.push 와 비슷한 기능 : 브라우저의 url을 조작해준다
 브라우저는 필요할 때마다 이 키값을 이용하여 서버에 저장된 데이터를 사용한다.
 
 # useLocation
-`import { useLocation } from 'react-router-dom';` 를 통해 import 한다.
+`import { useLocation } from 'react-router-dom';` 를 통해 import 한다.  
+`location`개체를 반환  
+사용자가 현재 머물러있는 페이지에 대한 정보를 알려준다.  
+
+```jsx
+console.log(useLocation());
+```
+![useLocation 구성](../images/useLocation%EC%98%88%EC%8B%9C.png)
+
+> 검색창에 ‘기계공학과’ 입력  
+
 
 **QueryString으로 전달되는 검색 키워드를 받는다**  
 
 ```jsx
-const { search } = useLocation();
+const { search } = useLocation(); // ?keyword=기계공학과
 ```
 
-**QueryString을 객체로 변환 → `?` 이후의 변수들을 이 객체 안에 분리해서 저장**  
+**QueryString을 객체로 변환(문자열 형태이기 때문) → `?` 이후의 변수들을 이 객체 안에 분리해서 저장**  
 
 ```jsx
 const query = new URLSearchParams(search);
 const { keyword } = Object.fromEntries(query);
+// 기계공학과,      Object.fromEntries(query) => {keyword: '기계공학과'}
 ```
 
 **페이지 강제 이동을 위한 객체 생성**  
