@@ -24,9 +24,9 @@ ex) 날씨: 강우 소식 ⇒ 비가 와서 우산을 가지고 나간다는 판
 
 # 2. 데이터베이스란?
 
-**공유**하여 사용될 목적으로 **통합**하여 관리하는 **데이터 집합**
+**공유**하여 사용될 목적으로 **통합**해 관리하는 **데이터 집합**
 
-관련된 자료들을 통합하여 자료의 중복을 없애 효율적으로 처리하기 위함
+자료의 중복을 없애 효율적으로 처리하기 위함
 
 # 3. DBMS(DataBaseMansgementSystem)
 
@@ -48,17 +48,21 @@ ex) 날씨: 강우 소식 ⇒ 비가 와서 우산을 가지고 나간다는 판
 
 - 데이터 정의어 (Data Definition Language)
 - DB관리자나 프로그래머가 데이터베이스 구조를 정의하기 위한 언어
+- 생성, 변경, 삭제, 이름변경, 초기화
+- CREATE, ALTER, DROP, RENAME, TRUNCATE 
 
 ### DML
 
 - 데이터 조작어 (Data Manipulation Language)
 - DB에 저장된 데이터를 조작하기 위해 사용됨
 - 검색, 추가, 삭제, 갱신
+- SELECT, INSERT, UPDATE, DELETE 
 
 ### DCL
 
 - 데이터 제어어 (Data Control Language)
-- 데이터 접근 권한 부여 등 DB시스템 관리를 위한 언어
+- 데이터 접근 권한 부여, 회수 등 DB시스템 관리를 위한 언어
+- GRANT, REVOKE 
 
 # 5. MYSQL SQL
 
