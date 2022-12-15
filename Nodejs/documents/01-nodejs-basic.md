@@ -61,6 +61,7 @@ js 실행창, 실행환경
 
 - Event-driven(이벤트 기반), Non-blocking I/O 특성을 가지는 실행 환경
 - SNS, 채팅 서비스처럼 요청이 한번에 매우 많이 일어나는 서비스에 적합하다.
+- JS로 웹서버 개발 가능
 - 코드가 짧고 쉬워서 빠른 개발 가능 ⇒ 개발 생산성 향상
 
 ### Non-blocking I/O
@@ -84,4 +85,55 @@ js 실행창, 실행환경
 
 ## Express 란?
 
-node.js 프레임워크
+node.js 서버 구현 프레임워크  
+
+### express 설치
+
+```bash
+npm install express
+```
+
+또는
+
+```bash
+yarn add express
+```
+
+### express 모듈 참조 + 객체 생성 + 포트번호
+
+여기서 생성한 app 객체의 use() 함수를 사용해서
+각종 외부 기능, 설정 내용, URL을 계속해서 확장하는 형태로 구현이 진행된다.
+
+```jsx
+const express = require('express'); // Express 모듈 불러오기
+const app = express();
+const port = 포트번호;
+```
+
+### get요청시 응답내용 작성
+
+```jsx
+// http://localhost:port/경로
+app.get("/", (req, res) => {
+	// 브라우저에 보낼 응답 내용
+	let html = '<h1>Express로 구현한 Node.js 백엔드 페이지</h1>';
+
+	// 응답 보내기
+	res.status(200).send(html);
+});
+```
+
+### 서버 실행
+
+```jsx
+app.listen(port, () => {
+	console.log("start express server");
+	console.log(`server address => http://localhost:${port}`);
+}
+```
+
+터미널에 다음 명령어로 서버 실행
+
+```bash
+node 파일경로
+```
