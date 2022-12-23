@@ -39,6 +39,7 @@ dbcon.connect((error) => {
     const input_data = ['Node학과', '공학관'];
 
     /** (5) SQL 실행하기 */
+    // query함수가 sql 과 input_data 를 조립해준다. 결과를 (error, result) 로 넘겨줌
     dbcon.query(sql, input_data, (error, result) => {
         // 이 에러가 감지되는 경우는 SQL문이 잘못 구성되어 MySQL에서 에러가 발생한 경우.
         if (error) {
