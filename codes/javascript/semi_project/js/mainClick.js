@@ -34,7 +34,7 @@ function mainClick(area, json, json2, json3) {
 
     // 오늘하루의 기상청 단기예보 데이터 w_data(최저, 최고 기온에 쓰임)
     let w_data = json3.response.body.items.item;
-    // console.log(w_data);
+    console.log(w_data);
 
     /** 클릭 이벤트: 상세정보 */
     area1.addEventListener('click', e=> {
